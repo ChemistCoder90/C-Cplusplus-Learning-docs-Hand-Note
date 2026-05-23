@@ -1,33 +1,48 @@
-“C++: 31 hours long video of freecodecamp”
+# 📘 "C++: 31 hours long video of freecodecamp"
 
-“Emon_SUST 01714076452”
+> **Emon_SUST** &nbsp;&nbsp;|&nbsp;&nbsp; 📞 01714076452
 
-Features:
+![C++](https://img.shields.io/badge/Language-C%2B%2B-blue?style=for-the-badge&logo=cplusplus) ![C++20](https://img.shields.io/badge/Standard-C%2B%2B20-informational?style=for-the-badge) ![FCC](https://img.shields.io/badge/Source-FreeCodeCamp-red?style=for-the-badge)
+
+---
+
+
+## 📌 Features:
+
 
 supports data abstruction, means Data abstraction is a fundamental concept in computer science and tsoftware engineering that involves hiding the implementation details of data types and exposing only the essential features or behaviour to the outside world. Data abstraction is a powerful concept that facilitates the design, implementation, and maintenance of complex software systems by providing clear interfaces, encapsulating implementation details, promoting modularity, and supporting information hiding.
 
------------------------------
 
-Statement: A statement is a basic unit of computation in a C++ program. Ends with a semicolon(;).
+---
+
+
+### Statement: A statement is a basic unit of computation in a C++ program. Ends with a semicolon(;).
+
 
 	They are executed from top to bottom when program is run.
 
-------------------------
+
+---
 
 ![](cpp_notes_images/01_statements_separator.png)
 
 ![](cpp_notes_images/02_input_space_separated.png)
 
-Variable: A piece of memory that used to store specific type of data.
 
-Number System representation:
+### Variable: A piece of memory that used to store specific type of data.
+
+
+
+### Number System representation:
+
 
 ![](cpp_notes_images/03_number_system_representation.png)
 
-
 *** Modifier like signed, unsigned used integral data type as decimal number/ whole number. Can’t use for float, double(2.0, 2.5).
 
-Float and Double:
+
+## 📌 Float and Double:
+
 
 ![](cpp_notes_images/04_float_precision_digits.png)
 
@@ -59,7 +74,8 @@ ul // unsigned long
 
 ll // long long
 
--------------------------------------xxx--------------------------------
+
+---
 
 **Booleans occupy 1byte/8bits in memory.
 
@@ -73,9 +89,12 @@ cout<<x<<” ”<<y;
 
 will print true, false.
 
-----------------------------------------
 
-Character:
+---
+
+
+## 📌 Character:
+
 
 ![](cpp_notes_images/09_char_boolean_examples.png)
 
@@ -89,9 +108,12 @@ Character:
 
 * Logical Operator: &&, ||, !
 
-------------------------
 
-Manipulator:    https://en.cppreference.com/w/cpp/io/manip   //for more
+---
+
+
+### Manipulator:    https://en.cppreference.com/w/cpp/io/manip   //for more
+
 
 * std:flush: when we print something, it does not go directly to the terminal. It store somewhere called “buffer”. When buffer is full/ complete it goes to terminal. If use std:flush data directly goes to console/terminal instead of goes to buffer.
 
@@ -113,29 +135,37 @@ Need this> #include<limits>
 
 ![](cpp_notes_images/15_numeric_limits_include.png)
 
---------------x------------
 
-#include<cmath> : abs(), pow(),  ceil(), log(), sqrt(), sin(), tan() etc https://en.cppreference.com/w/cpp/header/cmath
+---
+
+
+## 📌 #include<cmath> : abs(), pow(),  ceil(), log(), sqrt(), sin(), tan() etc https://en.cppreference.com/w/cpp/header/cmath
+
 
 for log(): log(10) means loge(10). So have to fix the base as log10(10). E=2.71..
 
 * round(): 3.5 will make 4, and 3.49 will make 3.
 
--------------------------------
+
+---
 
 ![](cpp_notes_images/16_arithmetic_implicit_conversion.png)
 
 if we take data type less than 4 byte and perform arithmatic operation compiler automatically convert it to 4 byte. This behavior also present on other operator like bitwise operator.(>>, <<)
 
------------------
 
-flow control: if else, switch, ternary operator.
+---
+
+
+## 📌 flow control: if else, switch, ternary operator.
+
 
 *Switch: if we not use “Break”, the case which match, after that all case will execute and print every case value.
 
 * we can use int, char , double, enum etc but not string as case.
 
---------------------------------------
+
+---
 
 * If we use “const” before array. We cant modify array elements.
 
@@ -177,7 +207,9 @@ Example:
 
 Enums are used to give names to constants, which makes the code easier to read and maintain. Use enums when you have values that you know aren't going to change, like month days, days, colours, deck of cards, etc.
 
-Pointer
+
+## 📌 Pointer
+
 
 Pointer is special kind of variable.
 
@@ -227,7 +259,9 @@ Use this: int a; int *ptr=&a;
 
 ![](cpp_notes_images/23_pointer_uninitialized_fix.png)
 
-					Memory Map
+
+## 🔷 Memory Map
+
 
 When we run a program it runs on RAM. Various program of OS or other is running on memory.
 
@@ -263,7 +297,9 @@ If we run few program, they are going to go through MMU and MMU is going assign 
 
 * HEAP:Additional memory when we run out of stack memory also to  make things better for program, Used for run time.
 
-				Dynamic Memory Allocation
+
+## 🔷 Dynamic Memory Allocation
+
 
 ![](cpp_notes_images/29_dynamic_memory_allocation.png)
 
@@ -327,7 +363,9 @@ For clear understanding see
 
 https://www.youtube.com/watch?v=uoCuMTzD9AE&list=PLgH5QX0i9K3q0ZKeXtF--CZ0PdH1sSbYL&index=90 // anisul islam lecture 92. Exception handling
 
-NULL pointer safety:
+
+### NULL pointer safety:
+
 
 ![](cpp_notes_images/35_null_pointer_safety_if.png)
 
@@ -339,9 +377,12 @@ check if null or not.
 
 * After use delete set pointer to nullptr for safety.
 
------------------x--------------
 
-Memory Leaks:
+---
+
+
+### Memory Leaks:
+
 
 ![](cpp_notes_images/38_memory_leaks_example.png)
 
@@ -355,7 +396,9 @@ After local scope is over, pointer is gonna die, but allocated memory will remai
 
 These memory leaks may causes program crash.
 
-Dynamic array: Array stores on the heap.
+
+### Dynamic array: Array stores on the heap.
+
 
 ![](cpp_notes_images/41_dynamic_array_heap.png)
 
@@ -405,7 +448,8 @@ Use case: *if want to modify original variable inside a function. This save memo
 
 Value will changes to 12.
 
--------------------------x-------------------
+
+---
 
 *** size(), sizeof() function return the size. But for character array it includes ‘null’ . But for string  size() don’t count null.
 
@@ -425,7 +469,8 @@ Using “const” is safe in string literal.
 
 Character array lives on read only memory. Can’t modify.
 
-----------x--------
+
+---
 
 swap 2 number.
 
@@ -433,9 +478,12 @@ swap 2 number.
 
 2. a=a^b;      b=a^b;   a=a^b;
 
-------------x-----------
 
-Returning from function as Reference: Usually function returns values(int, char etc). But sometime compilers are smart enough that that return reference instead of values. Avoid copies. See below
+---
+
+
+### Returning from function as Reference: Usually function returns values(int, char etc). But sometime compilers are smart enough that that return reference instead of values. Avoid copies. See below
+
 
 ![](cpp_notes_images/56_swap_numbers_xor.png)
 
@@ -447,9 +495,12 @@ Returning from function as Reference: Usually function returns values(int, char 
 
 Here both addresses are same. Its returns the reference. Using reference mechanism.
 
-----------x------------
 
-Function Overloaded: Means we can declare multiple function with same name in the same scope, but with different parameter lists. Like parameter type(int, double, float).
+---
+
+
+### Function Overloaded: Means we can declare multiple function with same name in the same scope, but with different parameter lists. Like parameter type(int, double, float).
+
 
 ![](cpp_notes_images/59_function_overload_allowed1.png)
 
@@ -463,15 +514,19 @@ Not allowed.(below)
 
 ![](cpp_notes_images/63_function_overload_not_allowed2.png)
 
------------x--------
+
+---
 
 ![](cpp_notes_images/64_when_overload_called.png)
 
 When ‘int’ type variable is passed as argument “int overload will called”. Same as double and others.
 
-----------------x--------------
 
-lambda Function:
+---
+
+
+### lambda Function:
+
 
 ![](cpp_notes_images/65_lambda_syntax.png)
 
@@ -505,7 +560,8 @@ See when we use variable as reference:
 
 If we print the addresses, we can clearly see that both(variable a, and lambda function variable a) variable have different addresses.
 
---------------
+
+---
 
 *** ”[=]” using this as capture list it will grab all variable from the surrounding scope. (To capture value)
 
@@ -513,11 +569,16 @@ If we print the addresses, we can clearly see that both(variable a, and lambda f
 
 *** using reference, all have same addresses.
 
--------------x------------
 
-Function Template:
+---
 
-Function Template by value: Function Template is a mechanism in c++ to set up a blueprint for functions, But compiler going generate the actual code when it sees the function called. Means to avoid code repetition.
+
+### Function Template:
+
+
+
+### Function Template by value: Function Template is a mechanism in c++ to set up a blueprint for functions, But compiler going generate the actual code when it sees the function called. Means to avoid code repetition.
+
 
 ![](cpp_notes_images/74_function_template_intro.png)
 
@@ -549,7 +610,8 @@ Template type parameter by references: Recall references procedure, template pro
 
 maximum(a,b); // this is used for both template with value and with reference. That’s why get confused.
 
----------------x-----------
+
+---
 
  Template Specialization: This is specially for “const char pointer” like:
 
@@ -573,7 +635,9 @@ In order to use template specialization we have to declare primary template like
 
 ![](cpp_notes_images/84_template_specialization_code2.png)
 
-C++ 20:
+
+## 📌 C++ 20:
+
 
 Concept: Concept is a mechanism to set up constrain or restriction on template parameter of  our function template. For example we can set that function to be called only integer and we call it something which isn’t ans integer, it will give a compiler error.
 
@@ -654,7 +718,9 @@ See this from cppinsights.io  comparing with and without “constexpr”
 
 ![](cpp_notes_images/98_constexpr_cppinsights_without.png)
 
-Build own Concept/Custom concept:
+
+## 📌 Build own Concept/Custom concept:
+
 
 Example 1:
 
@@ -688,7 +754,8 @@ Example 3: If we want “a” will be int and “b” will be double. See below.
 
 ![](cpp_notes_images/105_custom_concept_example3_two_types.png)
 
--------------x-----------
+
+---
 
 Deep dig into ‘Requires’ :
 
@@ -738,15 +805,22 @@ Exit(): “exit(1)” terminate the whole program. So if this is also used in us
 
 exit(1) → “Program ended due to an error.” // abnormal termination of the program
 
-------------x-----------
+
+---
 
 *** If we pass an array to a function is pass its reference through pointer. Not a copy.
 
-OOP
 
-Class: Class is a mechanism to build our own type to use them like we have been using built in type(int, double). Its like a blueprint to create object.
+## 📌 OOP
 
-Object: An object is a real instance(copy) of that class. Like a actual car built from blueprint.
+
+
+### Class: Class is a mechanism to build our own type to use them like we have been using built in type(int, double). Its like a blueprint to create object.
+
+
+
+### Object: An object is a real instance(copy) of that class. Like a actual car built from blueprint.
+
 
 ![](cpp_notes_images/116_class_blueprint_example.png)
 
@@ -766,7 +840,9 @@ Object: An object is a real instance(copy) of that class. Like a actual car buil
 
 ![](cpp_notes_images/117_class_private_members.png)
 
-Constructor:
+
+### Constructor:
+
 
 ![](cpp_notes_images/118_constructor_types.png)
 
@@ -794,17 +870,21 @@ Or inside main
 
 ![](cpp_notes_images/120_constructor_default_declaration.png)
 
-Setter & Getter:
+
+### Setter & Getter:
+
 
 Private members are not accessible from outside. Both are methods to modify or read member variable of a class.
 
-----------x-----------
+
+---
 
 ![](cpp_notes_images/121_ifndef_include_guard.png)
 
 Means this constant is define on any other file of the project and we are not sure, we can use this. It says, if below code is not defined, I am defining here, else skip. Otherwise, if same things defined in many places, show error.
 
----------x------
+
+---
 
 “::” Scope Resolution Operator: Used when a function of a class us defined on other file.
 
@@ -812,7 +892,8 @@ Means this constant is define on any other file of the project and we are not su
 
 But we have to mention function prototype inside the class. Like: Cylinder(double red_…..);
 
---------x------
+
+---
 
 ![](cpp_notes_images/123_pointer_object_management.png)
 
@@ -826,7 +907,9 @@ Direct creating object creates on stack and with using pointer object will creat
 
 dangling pointer is dangerous. Holds old memory. So after deleting set c2=nullptr;
 
-Destructors:
+
+### Destructors:
+
 
 ![](cpp_notes_images/125_destructor_declaration.png)
 
@@ -878,11 +961,15 @@ Pass an object by value: see 22:00:00 hr
 
 Not exactly pointing to the current object member(above).
 
-Chained call using Pointer:
+
+### Chained call using Pointer:
+
 
 ![](cpp_notes_images/136_chained_call_pointer.png)
 
-Chained call using Reference:
+
+### Chained call using Reference:
+
 
 ![](cpp_notes_images/137_chained_call_reference.png)
 
@@ -892,7 +979,9 @@ What happen in line: 33
 
 ![](cpp_notes_images/138_chained_call_line33.png)
 
-Struct Vs Classes: Struct is another way to  define classes. Differences:
+
+### Struct Vs Classes: Struct is another way to  define classes. Differences:
+
 
 ![](cpp_notes_images/139_struct_vs_class_differences.png)
 
@@ -900,7 +989,9 @@ Struct Vs Classes: Struct is another way to  define classes. Differences:
 
 So We can use struct when we have public members. But both are almost same. We can use anyone.
 
-Size of the class objects: Size of the class objects depends on the member of the class, not functions.
+
+### Size of the class objects: Size of the class objects depends on the member of the class, not functions.
+
 
 ![](cpp_notes_images/141_class_object_size_string.png)
 
@@ -932,7 +1023,9 @@ For functions:
 
 ![](cpp_notes_images/148_functions_no_size_contribution.png)
 
-Inheritance: Inheritance in C++ is a mechanism that allows a new class (derived class) to inherit properties and behaviours (methods) from an existing class (base class), promoting code reuse and creating a hierarchical relationship between classes.
+
+### Inheritance: Inheritance in C++ is a mechanism that allows a new class (derived class) to inherit properties and behaviours (methods) from an existing class (base class), promoting code reuse and creating a hierarchical relationship between classes.
+
 
 When a class inherits another class, it gets all the accessible members of the parent class, and the child class can also redefine (override) or add new functionality to them.
 
@@ -958,7 +1051,9 @@ This tell how accessible the base class members to derived class.
 
 ![](cpp_notes_images/153_inheritance_accessibility_table.png)
 
-Public Inheritance:
+
+### Public Inheritance:
+
 
 1. Anything public in base class, will remain public in derived class.
 
