@@ -38,7 +38,7 @@ supports data abstruction, means Data abstraction is a fundamental concept in co
 
 ![](cpp_notes_images/03_number_system_representation.png)
 
-*** Modifier like signed, unsigned used integral data type as decimal number/ whole number. Can’t use for float, double(2.0, 2.5).
+> *** Modifier like signed, unsigned used integral data type as decimal number/ whole number. Can’t use for float, double(2.0, 2.5).
 
 
 ## 🔢 Float and Double:
@@ -48,7 +48,7 @@ supports data abstruction, means Data abstraction is a fundamental concept in co
 
 For Float: 12345.6789-> 89will be garbage value. Cause precision 7 for Float. May print like: 12345.6725
 
-** float a=123456789-> 89 will b garbage value. May print like: 12345.6745
+> ** float a=123456789-> 89 will b garbage value. May print like: 12345.6745
 
 ![](cpp_notes_images/05_ieee754_float_representation.png)
 
@@ -77,7 +77,7 @@ ll // long long
 
 ---
 
-**Booleans occupy 1byte/8bits in memory.
+> **Booleans occupy 1byte/8bits in memory.
 
 bool x=true; // or bool x=1;
 
@@ -102,11 +102,11 @@ will print true, false.
 
 ![](cpp_notes_images/11_char_declaration.png)
 
-** 31/10 means how many times 10 is gonna fit in 31. so ans is 3.
+> ** 31/10 means how many times 10 is gonna fit in 31. so ans is 3.
 
-* Relation Operator: > ,< , >=, <=
+> * Relation Operator: > ,< , >=, <=
 
-* Logical Operator: &&, ||, !
+> * Logical Operator: &&, ||, !
 
 
 ---
@@ -115,11 +115,11 @@ will print true, false.
 ## 🖨️ Manipulator:    https://en.cppreference.com/w/cpp/io/manip   //for more
 
 
-* std:flush: when we print something, it does not go directly to the terminal. It store somewhere called “buffer”. When buffer is full/ complete it goes to terminal. If use std:flush data directly goes to console/terminal instead of goes to buffer.
+> * std:flush: when we print something, it does not go directly to the terminal. It store somewhere called “buffer”. When buffer is full/ complete it goes to terminal. If use std:flush data directly goes to console/terminal instead of goes to buffer.
 
 ![](cpp_notes_images/12_manipulators_flush.png)
 
-*setw() : set width
+> *setw() : set width
 
 cout<<right; // printf from right. 	Left for left alinement
 
@@ -129,7 +129,7 @@ cout<<setfill(‘-’) // blank space fill with ‘-’
 
 ![](cpp_notes_images/14_setfill_example.png)
 
-*for finding max min numeric number limits data type can hold.
+> *for finding max min numeric number limits data type can hold.
 
 Need this> #include<limits>
 
@@ -144,7 +144,7 @@ Need this> #include<limits>
 
 for log(): log(10) means loge(10). So have to fix the base as log10(10). E=2.71..
 
-* round(): 3.5 will make 4, and 3.49 will make 3.
+> * round(): 3.5 will make 4, and 3.49 will make 3.
 
 
 ---
@@ -160,16 +160,16 @@ if we take data type less than 4 byte and perform arithmatic operation compiler 
 ## 🔀 flow control: if else, switch, ternary operator.
 
 
-*Switch: if we not use “Break”, the case which match, after that all case will execute and print every case value.
+> *Switch: if we not use “Break”, the case which match, after that all case will execute and print every case value.
 
-* we can use int, char , double, enum etc but not string as case.
+> * we can use int, char , double, enum etc but not string as case.
 
 
 ---
 
-* If we use “const” before array. We cant modify array elements.
+> * If we use “const” before array. We cant modify array elements.
 
-* a[ ]={2,3,7,5,2,3}; size(a) return the size of array. /Or sizeof(a)/sizeof(a[0]);
+> * a[ ]={2,3,7,5,2,3}; size(a) return the size of array. /Or sizeof(a)/sizeof(a[0]);
 
 Enum: An enum is a special type that represents a group of constants (unchangeable values).
 
@@ -223,7 +223,7 @@ int * int_num{}; // this initialisation with {} is going to initialise with spec
 
 int * int_num{nullptr}; // this pointer not pointer anywhere
 
-** pointer of int, double, char etc all are same size. Cause they only store address.
+> ** pointer of int, double, char etc all are same size. Cause they only store address.
 
 Char *ptr{“Hello world”}; // Pointer will point to 1st character. Some compiler will not compile(MSVC). GCC will give warning and compile. A whole string is assigning to char type pointer. See:10:17:00
 
@@ -231,7 +231,7 @@ Cout<<ptr; // will print whole string.
 
 Cout<<*ptr;// print 1st character ‘H’;
 
-*ptr=’B’;// this may give error. Cause compiler will think it as const char array.
+> *ptr=’B’;// this may give error. Cause compiler will think it as const char array.
 
  If want to modify. Don’t use character pointer, use array like: char msg[10]==”Hello world”;
 
@@ -241,11 +241,11 @@ Dereferencing pointer: reading something(value) on the address of the pointer. C
 
 string with pointer: char* p_msg= “Hello World!”; // the pointer will point to the 1st character of string
 
-*this will compile with warning. Use const char* p_msg= “Hello World!”;
+> *this will compile with warning. Use const char* p_msg= “Hello World!”;
 
 printf p_msg will print whole string. But using dereferencing will print 1st character(*p_msg).
 
-*** without const it gives warning/refuse to compile cause compiler is going to convert string into char array of constant char. What we are using is points to that is not a const char pointer. So pointer here might be used to try or modify data. That’s why it refuse unless using const.
+> *** without const it gives warning/refuse to compile cause compiler is going to convert string into char array of constant char. What we are using is points to that is not a const char pointer. So pointer here might be used to try or modify data. That’s why it refuse unless using const.
 
 Check at 10:17min
 
@@ -253,7 +253,7 @@ int *ptr;// contain junk address
 
 int a=12;
 
-*ptr=&a;
+> *ptr=&a;
 
 uninitialized pointer contain junk address. Assigning a value to it(*ptr=12)May cause error. Could be point to a memory which is used by OS. May cause disaster.
 
@@ -283,21 +283,21 @@ If we run few program, they are going to go through MMU and MMU is going assign 
 
 ![](cpp_notes_images/27_mmu_program_sections.png)
 
-* Since program thinks it 2n -1 memory, The MMU is going to transform between the idea the program has and the RAM we have(assigned memory by MMU).
+> * Since program thinks it 2n -1 memory, The MMU is going to transform between the idea the program has and the RAM we have(assigned memory by MMU).
 
-* The memory map/Structure of program is standard format defined by OS. That’s why we can’t run directly window program on Linux.
+> * The memory map/Structure of program is standard format defined by OS. That’s why we can’t run directly window program on Linux.
 
-*Memory map is divided into a lot parts
+> *Memory map is divided into a lot parts
 
 ![](cpp_notes_images/28_memory_map_parts.png)
 
-* STACK: Local variable stores on stack section.
+> * STACK: Local variable stores on stack section.
 
-	* print, statement, function calls others store on stack section.
+> * print, statement, function calls others store on stack section.
 
-* TEXT:Actual binary load on Text so that CPU can execute it.
+> * TEXT:Actual binary load on Text so that CPU can execute it.
 
-* HEAP:Additional memory when we run out of stack memory also to  make things better for program, Used for run time.
+> * HEAP:Additional memory when we run out of stack memory also to  make things better for program, Used for run time.
 
 
 ## 💾 Dynamic Memory Allocation
@@ -311,7 +311,7 @@ If we run few program, they are going to go through MMU and MMU is going assign 
 
 ![](cpp_notes_images/30_heap_pointer_setup.png)
 
-*set up a pointer which point to heap memory.
+> *set up a pointer which point to heap memory.
 
 After initializing a pointer with nullptr. When p_number4=new int execute the OS is allocate a memory on heap. Variables are usually stores on stack section. It removes when variable containing scope will over. But if we allocate a memory on heap by “p_number4=new int;” . This memory will live though its scope is over. It will stay until return it to operating system. To return:
 
@@ -319,11 +319,11 @@ After initializing a pointer with nullptr. When p_number4=new int execute the OS
 
 Use ‘delete’ to return memory to the  operating system. After return reset pointer to ‘nullptr’ is good to make it clear that no valid data pointer is pointing.
 
-* Using ‘delete’ remove the allocated heap memory which is pointed. Not the pointer. If pointing to ‘nullptr’, delete will do nothing.
+> * Using ‘delete’ remove the allocated heap memory which is pointed. Not the pointer. If pointing to ‘nullptr’, delete will do nothing.
 
-*** Always remember to release memory.
+> *** Always remember to release memory.
 
-*Dangling Pointer: A pointer that doesn’t point to a valid memory address. Trying to dereferencing and using a dangling pointer  will results in undefined behaviour.
+> *Dangling Pointer: A pointer that doesn’t point to a valid memory address. Trying to dereferencing and using a dangling pointer  will results in undefined behaviour.
 
 How dangling pointer create:
 
@@ -341,7 +341,7 @@ Solution:
 
 3. For multiple pointer point to same address, make sure master pointer is clear/ reset.
 
-*** Always check if pointer is nullptr or not by if-else.
+> *** Always check if pointer is nullptr or not by if-else.
 
 ‘New’ fails:
 
@@ -351,13 +351,13 @@ When allocating an array with pointer with huge size(1000000000000000000). It ma
 
 Both allocation (with for loop or without) fail.
 
-   * Solve with ‘exception mechanism’:
+> * Solve with ‘exception mechanism’:
 
 ![](cpp_notes_images/33_exception_mechanism.png)
 
 With ‘exception’ we can catch the problem. What is called ‘handle’ in the problem. Suppose we are going to set up color and color fails. UI(interface) may show black and white. But program will keep running “what()”  function will show the error.
 
-     *with ‘nothrow’: If “new” fails, we are going to get “nullptr” stored.
+> *with ‘nothrow’: If “new” fails, we are going to get “nullptr” stored.
 
 ![](cpp_notes_images/34_nothrow_example.png)
 
@@ -377,7 +377,7 @@ check if null or not.
 
 ![](cpp_notes_images/37_null_ptr_boolean_implicit.png)
 
-* After use delete set pointer to nullptr for safety.
+> * After use delete set pointer to nullptr for safety.
 
 
 ---
@@ -424,7 +424,7 @@ Reference: A reference is an alias (another name) for an existing variable. It d
 
 If we change reference value or variable value, both contribute same changes.
 
-** “&ref” and “&s” both has same memory address.
+> ** “&ref” and “&s” both has same memory address.
 
 ![](cpp_notes_images/48_reference_same_address.png)
 
@@ -438,13 +438,13 @@ Use case: *if want to modify original variable inside a function. This save memo
 
 ![](cpp_notes_images/51_reference_modify_in_function.png)
 
-* Return reference by function to a local or global variable.
+> * Return reference by function to a local or global variable.
 
 ![](cpp_notes_images/52_return_reference_function.png)
 
 ![](cpp_notes_images/53_return_reference_example.png)
 
-* Using “const” before reference makes the variable unchangeable. This constant only applies to reference. Not variable. Can’t changes variable value with “const reference”. But variable itself can changes its value.
+> * Using “const” before reference makes the variable unchangeable. This constant only applies to reference. Not variable. Can’t changes variable value with “const reference”. But variable itself can changes its value.
 
 ![](cpp_notes_images/54_const_reference_example.png)
 
@@ -453,9 +453,9 @@ Value will changes to 12.
 
 ---
 
-*** size(), sizeof() function return the size. But for character array it includes ‘null’ . But for string  size() don’t count null.
+> *** size(), sizeof() function return the size. But for character array it includes ‘null’ . But for string  size() don’t count null.
 
-*** strlen() is used for character array. Not for string.
+> *** strlen() is used for character array. Not for string.
 
 		char *a=”asdf”;     // this is string literal. Not modifiable.
 
@@ -463,7 +463,7 @@ Value will changes to 12.
 
 Using “const” is safe in string literal.
 
-***String literal is actually a character array. When we assign it to “const char * ”, it automatically converts into a pointer to 1st element. String has not fixed amount of memory, cause it internally implemented as a class and it stores its data as const char pointer.
+> ***String literal is actually a character array. When we assign it to “const char * ”, it automatically converts into a pointer to 1st element. String has not fixed amount of memory, cause it internally implemented as a class and it stores its data as const char pointer.
 
 	Const char *msg=”Hello I am here.”;
 
@@ -534,9 +534,9 @@ When ‘int’ type variable is passed as argument “int overload will called�
 
 ![](cpp_notes_images/66_lambda_example_full.png)
 
-* Return type is not important. If keep blank, compiler is gonna deduce its type by itself.
+> * Return type is not important. If keep blank, compiler is gonna deduce its type by itself.
 
-* Use ‘;’ after function body. Because lambda function is a statement.
+> * Use ‘;’ after function body. Because lambda function is a statement.
 
 ![](cpp_notes_images/67_lambda_with_return.png)
 
@@ -548,7 +548,7 @@ Here  if lambda function return something, it going to assign to variable ‘fun
 
 Capture lists on lambda function: Capture list is a part of lambda function inside the square brackets which tells the lambda function, which variable from the surrounding scope it can use and how(like using a copy of a variable or references).
 
-* When a lambda function capture values, it made a copy of that variable on the memory. So if that variable is changed later it will not effect on that lambda function. Lambda function retain the old value unless we use variable as reference. See below…
+> * When a lambda function capture values, it made a copy of that variable on the memory. So if that variable is changed later it will not effect on that lambda function. Lambda function retain the old value unless we use variable as reference. See below…
 
 ![](cpp_notes_images/70_lambda_capture_by_value.png)
 
@@ -565,11 +565,11 @@ If we print the addresses, we can clearly see that both(variable a, and lambda f
 
 ---
 
-*** ”[=]” using this as capture list it will grab all variable from the surrounding scope. (To capture value)
+> *** ”[=]” using this as capture list it will grab all variable from the surrounding scope. (To capture value)
 
-*** ”[#]” using this as capture list it will grab all variable from the surrounding scope. (To capture as 	       	references)
+> *** ”[#]” using this as capture list it will grab all variable from the surrounding scope. (To capture as 	       	references)
 
-*** using reference, all have same addresses.
+> *** using reference, all have same addresses.
 
 
 ---
@@ -588,7 +588,7 @@ Here there are multiple function overload. They are doing the work. To minimise 
 
 ![](cpp_notes_images/75_function_template_blueprint.png)
 
-** can also pass string by argument.
+> ** can also pass string by argument.
 
 Function templates are not c++ code. It just a function blueprint.
 
@@ -596,7 +596,7 @@ Function templates are not c++ code. It just a function blueprint.
 
 If data types are not same passing as argument, we can  explicitly set the type with<double>. This basically tells the compiler to generate double/int etc. template instance function for this calling. And implicitly convert other type to determined type. In below example ”a” variable int type and will convert to double.
 
-** We can see this internal conversion of function template on cppinsights.io.
+> ** We can see this internal conversion of function template on cppinsights.io.
 
 ![](cpp_notes_images/77_function_template_explicit_type.png)
 
@@ -701,9 +701,9 @@ Here without “constrxpr” if is checked at run time. So both branch(if, else)
 
 But with “constexpr”
 
-* if constexpr means the compiler chooses the branch at compile time.
+> * if constexpr means the compiler chooses the branch at compile time.
 
-* The unused branch is discarded before code generation — it’s as if it never existed. Means for (“print(42)”) compiler will keep only  if part. And for (“print(3.14)”) compiler will keep else part.
+> * The unused branch is discarded before code generation — it’s as if it never existed. Means for (“print(42)”) compiler will keep only  if part. And for (“print(3.14)”) compiler will keep else part.
 
 ![](cpp_notes_images/96_constexpr_if_branch_selection.png)
 
@@ -810,7 +810,7 @@ exit(1) → “Program ended due to an error.” // abnormal termination of the 
 
 ---
 
-*** If we pass an array to a function is pass its reference through pointer. Not a copy.
+> *** If we pass an array to a function is pass its reference through pointer. Not a copy.
 
 
 ## 🏛️ OOP
@@ -826,19 +826,19 @@ exit(1) → “Program ended due to an error.” // abnormal termination of the 
 
 ![](cpp_notes_images/116_class_blueprint_example.png)
 
-* Public means after “public” all parameter are accessible outside of the class.
+> * Public means after “public” all parameter are accessible outside of the class.
 
-* If public is not defined. Then in general all parameter are indicated to private. Means can’t  access outside of the class. (Members of class are private by default).
+> * If public is not defined. Then in general all parameter are indicated to private. Means can’t  access outside of the class. (Members of class are private by default).
 
-* Public, private, protected are called access specifier.
+> * Public, private, protected are called access specifier.
 
-* if public is not defined on above example. All member will be private. Line 19,20, 21 can’t write. Compiler will give error.
+> * if public is not defined on above example. All member will be private. Line 19,20, 21 can’t write. Compiler will give error.
 
-* Private members can be accessible from inside class.
+> * Private members can be accessible from inside class.
 
-* Objects(ob1) are run time data.
+> * Objects(ob1) are run time data.
 
-* Member variable should be set to private.
+> * Member variable should be set to private.
 
 ![](cpp_notes_images/117_class_private_members.png)
 
@@ -856,19 +856,19 @@ Constructor are 2 type.
 
 ![](cpp_notes_images/119_constructor_parameterized.png)
 
-* This is how private members can be accessible inside class.
+> * This is how private members can be accessible inside class.
 
-* If an object is declare default constructor will be called. Line: 13
+> * If an object is declare default constructor will be called. Line: 13
 
-* if not defined(default constructor), compiler will automatically generate default empty constructor.
+> * if not defined(default constructor), compiler will automatically generate default empty constructor.
 
 Or inside main
 
 “mycls ob1(12,22);” parameterized constructor will be called. Line: 17. default will not be called.
 
-* If compiler sees any constructor, its not gonna generate default constructor.
+> * If compiler sees any constructor, its not gonna generate default constructor.
 
-* We can declare default constructor 2 ways; on line:13 & 16
+> * We can declare default constructor 2 ways; on line:13 & 16
 
 ![](cpp_notes_images/120_constructor_default_declaration.png)
 
@@ -917,23 +917,23 @@ dangling pointer is dangerous. Holds old memory. So after deleting set c2=nullpt
 
 ![](cpp_notes_images/126_destructor_when_called.png)
 
-  * When local stack objects goes out of scape then destructor is going to be called by compiler.
+> * When local stack objects goes out of scape then destructor is going to be called by compiler.
 
-  * When heap object is released with delete.
+> * When heap object is released with delete.
 
-*** Destructor has no parameter.
+> *** Destructor has no parameter.
 
-*** Destructor does not called by compiler automatically for heap data. We have to release memory like line 32(below)
+> *** Destructor does not called by compiler automatically for heap data. We have to release memory like line 32(below)
 
-*** The compiler calls destructor for objects with automatic storage duration when they leave scope.
+> *** The compiler calls destructor for objects with automatic storage duration when they leave scope.
 
 If I have 3 objects(d1,d2,d3), destructor will call 3 times. But in reverse order. ‘d3’ destructor will call 1st and d1 destructor in last.
 
 ![](cpp_notes_images/127_destructor_order_explained.png)
 
-* “d1” is a local object. It destroyed when main() exits its scope after line 39 and before the program returns from main(line 41);
+> * “d1” is a local object. It destroyed when main() exits its scope after line 39 and before the program returns from main(line 41);
 
-* ”d1” lives in stack. When main ends, C++ compiler automatically calls destructor. Memory released for ‘d1’ object.
+> * ”d1” lives in stack. When main ends, C++ compiler automatically calls destructor. Memory released for ‘d1’ object.
 
 ![](cpp_notes_images/128_destructor_d1_stack.png)
 
@@ -1039,11 +1039,11 @@ When a class inherits another class, it gets all the accessible members of the p
 
 in the above example, player class inherits all public members of human. But can’t access private. That’s why we only can print ‘age’ variable. Also passing string through player object(”motaher”, “emon”) constructor will be unused. We have to use public setter & getter.
 
-***Protected member: Sometime we may want that members of base class has to be accessible from derived class but still be inaccessible from outside. In that case use those member as protected member. Below:
+> ***Protected member: Sometime we may want that members of base class has to be accessible from derived class but still be inaccessible from outside. In that case use those member as protected member. Below:
 
 ![](cpp_notes_images/151_inheritance_protected_member.png)
 
-***Base class access specifier:
+> ***Base class access specifier:
 
 ![](cpp_notes_images/152_inheritance_base_access_specifier.png)
 
