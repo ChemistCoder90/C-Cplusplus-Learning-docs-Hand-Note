@@ -1,1073 +1,1167 @@
-# 📘 "C++: 31 hours long video of freecodecamp"
+# 📘 C++ Hand Notes — FreeCodeCamp 31-Hour Video
 
-> **Emon_SUST** &nbsp;&nbsp;|&nbsp;&nbsp; 📞 01714076452
-
-![C++](https://img.shields.io/badge/Language-C%2B%2B-blue?style=for-the-badge&logo=cplusplus) ![C++20](https://img.shields.io/badge/Standard-C%2B%2B20-informational?style=for-the-badge) ![FCC](https://img.shields.io/badge/Source-FreeCodeCamp-red?style=for-the-badge)
-
----
-
-
-## ✨ Features:
-
-
-supports data abstruction, means Data abstraction is a fundamental concept in computer science and tsoftware engineering that involves hiding the implementation details of data types and exposing only the essential features or behaviour to the outside world. Data abstraction is a powerful concept that facilitates the design, implementation, and maintenance of complex software systems by providing clear interfaces, encapsulating implementation details, promoting modularity, and supporting information hiding.
-
+> **Source:** [C++ Programming Course – Beginner to Beyond (31 Hours)](https://www.youtube.com/watch?v=8jLOx1hD3_o) by FreeCodeCamp  
+> **Reference:** [cppreference.com](https://en.cppreference.com) · [cplusplus.com](https://www.cplusplus.com)
 
 ---
 
+## 🌟 Key Features of C++
 
-## 📝 Statement: A statement is a basic unit of computation in a C++ program. Ends with a semicolon(;).
-
-
-	They are executed from top to bottom when program is run.
-
+C++ supports **data abstraction** — hiding implementation details of data types and exposing only the essential behaviour to the outside world. This facilitates design, implementation, and maintenance of complex software systems through clear interfaces, encapsulation, modularity, and information hiding.
 
 ---
 
-![](cpp_notes_images/01_statements_separator.png)
+## 📑 Table of Contents
 
-![](cpp_notes_images/02_input_space_separated.png)
-
-
-### 📦 Variable: A piece of memory that used to store specific type of data.
-
-
-
-### 🔢 Number System representation:
-
-
-![](cpp_notes_images/03_number_system_representation.png)
-
-> *** Modifier like signed, unsigned used integral data type as decimal number/ whole number. Can’t use for float, double(2.0, 2.5).
-
-
-## 🔢 Float and Double:
-
-
-![](cpp_notes_images/04_float_precision_digits.png)
-
-For Float: 12345.6789-> 89will be garbage value. Cause precision 7 for Float. May print like: 12345.6725
-
-> ** float a=123456789-> 89 will b garbage value. May print like: 12345.6745
-
-![](cpp_notes_images/05_ieee754_float_representation.png)
-
-![](cpp_notes_images/06_ieee754_code_example.png)
-
-![](cpp_notes_images/07_setprecision_code.png)
-
-cout<<setprecision(20);
-
-![](cpp_notes_images/08_setprecision_output.png)
-
-If we not set precision, the default precision will be 6 digits.(Total digits. Not after decimal point)
-
-if we use “fixed” the with set precision(4), precision will be 4 after decimal point. Above a=12.1234;(ans)
-
-But not using “fixed” precision will be 4 for total digits. Above a=12.12;(ans)
-
-used for set precision. Library> #include<iomanip>
-
-suffixes(like f, L): u // unsigned
-
-ul // unsigned long
-
-ll // long long
-
-
----
-
-> **Booleans occupy 1byte/8bits in memory.
-
-bool x=true; // or bool x=1;
-
-bool y=false; // or bool y=0;
-
-cout<<boolalpha; //used for printf true/false instead of 0/1
-
-cout<<x<<” ”<<y;
-
-will print true, false.
-
+- [Basics](#basics)
+  - [Statement](#statement)
+  - [Variable](#variable)
+  - [Number System & Data Types](#number-system--data-types)
+  - [Float and Double](#float-and-double)
+  - [Boolean](#boolean)
+  - [Character](#character)
+  - [Operators](#operators)
+  - [Manipulators](#manipulators)
+  - [Math Library](#math-library)
+  - [Type Conversion](#type-conversion)
+  - [Flow Control](#flow-control)
+  - [Arrays](#arrays)
+  - [Enum](#enum)
+- [Pointers & Memory](#pointers--memory)
+  - [Pointer](#pointer)
+  - [Memory Map](#memory-map)
+  - [Dynamic Memory Allocation](#dynamic-memory-allocation)
+  - [Dangling Pointer](#dangling-pointer)
+  - [NULL Pointer Safety](#null-pointer-safety)
+  - [Memory Leaks](#memory-leaks)
+  - [Dynamic Arrays](#dynamic-arrays)
+  - [Reference](#reference)
+- [Functions](#functions)
+  - [String & Character Array](#string--character-array)
+  - [Swap Two Numbers](#swap-two-numbers)
+  - [Returning Reference from Function](#returning-reference-from-function)
+  - [Function Overloading](#function-overloading)
+  - [Lambda Function](#lambda-function)
+  - [Function Template](#function-template)
+  - [Template Specialization](#template-specialization)
+- [C++20 Features](#c20-features)
+  - [Concepts](#concepts)
+  - [Type Traits](#type-traits)
+  - [Custom Concepts](#custom-concepts)
+  - [Deep Dive into Requires](#deep-dive-into-requires)
+- [OOP — Object-Oriented Programming](#oop--object-oriented-programming)
+  - [Class & Object](#class--object)
+  - [Constructor](#constructor)
+  - [Setter & Getter](#setter--getter)
+  - [ifndef & Scope Resolution Operator](#ifndef--scope-resolution-operator)
+  - [Managing Class Objects by Pointer](#managing-class-objects-by-pointer)
+  - [Destructor](#destructor)
+  - [this Pointer](#this-pointer)
+  - [Struct vs Class](#struct-vs-class)
+  - [Size of Class Objects](#size-of-class-objects)
+- [Inheritance](#inheritance)
+  - [Inheritance Basics](#inheritance-basics)
+  - [Access Specifiers & Protected Members](#access-specifiers--protected-members)
+  - [Base Class Access Specifier](#base-class-access-specifier)
+  - [Default Arc Constructor with Inheritance](#default-arc-constructor-with-inheritance)
+  - [Initializer List](#initializer-list)
+  - [Custom Constructor with Inheritance](#custom-constructor-with-inheritance)
+  - [Copy Constructors with Inheritance](#copy-constructors-with-inheritance)
+  - [Inheriting Base Constructor](#inheriting-base-constructor)
 
 ---
 
+## Basics
 
-## 🔤 Character:
+### Statement
 
-
-![](cpp_notes_images/09_char_boolean_examples.png)
-
-![](cpp_notes_images/10_char_code.png)
-
-![](cpp_notes_images/11_char_declaration.png)
-
-> ** 31/10 means how many times 10 is gonna fit in 31. so ans is 3.
-
-> * Relation Operator: > ,< , >=, <=
-
-> * Logical Operator: &&, ||, !
-
+A **statement** is a basic unit of computation in a C++ program. It ends with a semicolon `;` and statements are executed from top to bottom when the program runs.
 
 ---
 
+### Variable
 
-## 🖨️ Manipulator:    https://en.cppreference.com/w/cpp/io/manip   //for more
-
-
-> * std:flush: when we print something, it does not go directly to the terminal. It store somewhere called “buffer”. When buffer is full/ complete it goes to terminal. If use std:flush data directly goes to console/terminal instead of goes to buffer.
-
-![](cpp_notes_images/12_manipulators_flush.png)
-
-> *setw() : set width
-
-cout<<right; // printf from right. 	Left for left alinement
-
-![](cpp_notes_images/13_setw_right_alignment.png)
-
-cout<<setfill(‘-’) // blank space fill with ‘-’
-
-![](cpp_notes_images/14_setfill_example.png)
-
-> *for finding max min numeric number limits data type can hold.
-
-Need this> #include<limits>
-
-![](cpp_notes_images/15_numeric_limits_include.png)
-
+A **variable** is a piece of memory used to store a specific type of data.
 
 ---
 
+### Number System & Data Types
 
-## ➗ #include<cmath> : abs(), pow(),  ceil(), log(), sqrt(), sin(), tan() etc https://en.cppreference.com/w/cpp/header/cmath
+> `***` Modifiers like `signed`, `unsigned` are used with integral data types (whole numbers). Cannot be used with `float`, `double`.
 
+![Number System Representation](cpp_notes_images/cpp_notes_image_001.png)
 
-for log(): log(10) means loge(10). So have to fix the base as log10(10). E=2.71..
+![Data Types Overview](cpp_notes_images/cpp_notes_image_002.png)
 
-> * round(): 3.5 will make 4, and 3.49 will make 3.
-
-
----
-
-![](cpp_notes_images/16_arithmetic_implicit_conversion.png)
-
-if we take data type less than 4 byte and perform arithmatic operation compiler automatically convert it to 4 byte. This behavior also present on other operator like bitwise operator.(>>, <<)
-
+![Data Type Sizes](cpp_notes_images/cpp_notes_image_003.png)
 
 ---
 
+### Float and Double
 
-## 🔀 flow control: if else, switch, ternary operator.
+> `**` Precision includes digits **before** the decimal point. For example: `12547.325` → `12547` is included in the precision count.
 
+- **Float** (precision ~7 digits): `12345.6789` → `89` will be garbage. May print as `12345.6725`
+- `float a = 123456789` → `89` will be garbage. May print as `12345.6745`
 
-> *Switch: if we not use “Break”, the case which match, after that all case will execute and print every case value.
+Floating point memory representation is not similar to decimal numbers — explained in [IEEE 754](https://www.youtube.com/watch?v=8afbTaA-gOQ&t=181s).
 
-> * we can use int, char , double, enum etc but not string as case.
+```cpp
+cout << setprecision(20);
+```
 
+- Default precision (without setting): **6 digits total** (not after decimal point)
+- With `fixed` + `setprecision(4)`: precision is 4 **after** decimal point → `a = 12.1234`
+- Without `fixed` + `setprecision(4)`: precision is 4 **total digits** → `a = 12.12`
+
+> Library needed: `#include <iomanip>`
+
+**Suffixes:**
+```
+u   // unsigned
+ul  // unsigned long
+ll  // long long
+```
+
+![Float/Double Representation](cpp_notes_images/cpp_notes_image_004.png)
+
+![setprecision example](cpp_notes_images/cpp_notes_image_005.png)
 
 ---
 
-> * If we use “const” before array. We cant modify array elements.
+### Boolean
 
-> * a[ ]={2,3,7,5,2,3}; size(a) return the size of array. /Or sizeof(a)/sizeof(a[0]);
+> `**` Booleans occupy **1 byte / 8 bits** in memory.
 
-Enum: An enum is a special type that represents a group of constants (unchangeable values).
+```cpp
+bool x = true;   // or bool x = 1;
+bool y = false;  // or bool y = 0;
 
-To create an enum, use the enum keyword, followed by the name of the enum, and separate the enum items with a comma.
+cout << boolalpha;  // prints true/false instead of 0/1
+cout << x << " " << y;
+// Output: true false
+```
 
-![](cpp_notes_images/17_enum_declaration.png)
+---
 
-Enum is short for "enumerations", which means "specifically listed".
+### Character
 
-To access the enum, you must create a variable of it.
+![Character Type](cpp_notes_images/cpp_notes_image_006.png)
 
-Inside the main() method, specify the enum keyword, followed by the name of the enum (Level) and then the name of the enum variable (myVar in this example):
+> `**` `31 / 10` means how many times 10 fits in 31 → answer is **3**.
 
-![](cpp_notes_images/18_enum_main_variable.png)
+---
 
-By default, the first item (LOW) has the value 0, the second (MEDIUM) has the value 1, etc.
+### Operators
 
-If you now try to print myVar, it will output 1, which represents MEDIUM:
+- **Relation Operators:** `>`, `<`, `>=`, `<=`
+- **Logical Operators:** `&&`, `||`, `!`
 
-![](cpp_notes_images/19_enum_print_output.png)
+---
 
-As you know, the first item of an enum has the value 0. The second has the value 1, and so on. To make more sense of the values, you can easily change them:
+### Manipulators
 
-![](cpp_notes_images/20_enum_custom_values.png)
+📎 Reference: [https://en.cppreference.com/w/cpp/io/manip](https://en.cppreference.com/w/cpp/io/manip)
 
-Note that if you assign a value to one specific item, the next items will update their numbers accordingly:
+- **`std::flush`:** Normally, output goes to a "buffer" first; only when buffer is full does it go to the terminal. `std::flush` sends data directly to the console without waiting.
+- **`setw()`:** Sets the width of the next output.
+- **`cout << right;`** — right-align output; `cout << left;` — left-align.
+- **`cout << setfill('-')`** — fill blank spaces with `'-'`.
 
-![](cpp_notes_images/21_enum_next_items_update.png)
+**Finding numeric limits:**
+```cpp
+#include <limits>
+```
+📎 [https://en.cppreference.com/w/cpp/types/numeric_limits](https://en.cppreference.com/w/cpp/types/numeric_limits)
 
-Example:
+![Manipulator example](cpp_notes_images/cpp_notes_image_007.png)
 
-![](cpp_notes_images/22_enum_example_full.png)
+---
 
+### Math Library
+
+```cpp
+#include <cmath>
+// abs(), pow(), ceil(), log(), sqrt(), sin(), tan() ...
+```
+📎 [https://en.cppreference.com/w/cpp/header/cmath](https://en.cppreference.com/w/cpp/header/cmath)
+
+> `log(10)` means **logₑ(10)**. To fix base: use `log10(10)`. E ≈ 2.71
+
+- `round()`: `3.5` → `4`, `3.49` → `3`
+
+---
+
+### Type Conversion
+
+If a data type **less than 4 bytes** is used in an arithmetic operation, the compiler automatically converts it to 4 bytes. This behavior also applies to bitwise operators (`>>`, `<<`).
+
+---
+
+### Flow Control
+
+**`if-else`, `switch`, ternary operator**
+
+- **Switch:** If `break` is not used, all cases after the matching one will execute (fall-through).
+- Switch can use `int`, `char`, `double`, `enum` etc. as case values — but **not** `string`.
+
+---
+
+### Arrays
+
+- Using `const` before array declaration prevents modification of elements.
+- `a[] = {2,3,7,5,2,3};` — `size(a)` or `sizeof(a)/sizeof(a[0])` returns the array size.
+
+![Array example](cpp_notes_images/cpp_notes_image_008.png)
+
+---
+
+### Enum
+
+An **enum** is a special type that represents a group of constants (unchangeable values).
+
+```cpp
+enum Level { LOW, MEDIUM, HIGH };
+Level myVar = MEDIUM;
+cout << myVar; // Output: 1
+```
+
+- Default: first item = `0`, second = `1`, etc.
+- You can assign custom values; subsequent items update accordingly.
 
 #### Why And When To Use Enums?
 
+Enums give names to constants, making code easier to read and maintain. Use when values won't change — e.g. month days, days of week, colours, card suits, etc.
 
-Enums are used to give names to constants, which makes the code easier to read and maintain. Use enums when you have values that you know aren't going to change, like month days, days, colours, deck of cards, etc.
+![Enum example](cpp_notes_images/cpp_notes_image_009.png)
 
-
-## 🔗 Pointer
-
-
-Pointer is special kind of variable.
-
-int* int_num{}; or int* int_num; // will point to a integer type variable //initialise with null 					     // pointer(nulptr)
-
-double* frac_num{}; // will point to a double type variable
-
-int * int_num{}; // this initialisation with {} is going to initialise with special address means it is not 			//pointing any variable. Means initialize  with nullptr
-
-int * int_num{nullptr}; // this pointer not pointer anywhere
-
-> ** pointer of int, double, char etc all are same size. Cause they only store address.
-
-Char *ptr{“Hello world”}; // Pointer will point to 1st character. Some compiler will not compile(MSVC). GCC will give warning and compile. A whole string is assigning to char type pointer. See:10:17:00
-
-Cout<<ptr; // will print whole string.
-
-Cout<<*ptr;// print 1st character ‘H’;
-
-> *ptr=’B’;// this may give error. Cause compiler will think it as const char array.
-
- If want to modify. Don’t use character pointer, use array like: char msg[10]==”Hello world”;
-
-or use const char *ptr{“Hello world”};  // no warning. Can’t modify also.
-
-Dereferencing pointer: reading something(value) on the address of the pointer. Cout<<*ptr;
-
-string with pointer: char* p_msg= “Hello World!”; // the pointer will point to the 1st character of string
-
-> *this will compile with warning. Use const char* p_msg= “Hello World!”;
-
-printf p_msg will print whole string. But using dereferencing will print 1st character(*p_msg).
-
-> *** without const it gives warning/refuse to compile cause compiler is going to convert string into char array of constant char. What we are using is points to that is not a const char pointer. So pointer here might be used to try or modify data. That’s why it refuse unless using const.
-
-Check at 10:17min
-
-int *ptr;// contain junk address
-
-int a=12;
-
-> *ptr=&a;
-
-uninitialized pointer contain junk address. Assigning a value to it(*ptr=12)May cause error. Could be point to a memory which is used by OS. May cause disaster.
-
-Use this: int a; int *ptr=&a;
-
-![](cpp_notes_images/23_pointer_uninitialized_fix.png)
-
-
-## 🗺️ Memory Map
-
-
-When we run a program it runs on RAM. Various program of OS or other is running on memory.
-
-![](cpp_notes_images/24_memory_map_programs_ram.png)
-
-![](cpp_notes_images/25_memory_map_virtual.png)
-
-This process thinks it own 0~2N  amount of memory which is virtual memory.
-
-When we run a program it is going to go through a CPU section called memory management unit(MMU).
-
-![](cpp_notes_images/26_mmu_mapping.png)
-
-MMU really does is, helps us mapping between the memory map in ur program and the real thing we have in RAM.
-
-If we run few program, they are going to go through MMU and MMU is going assign them real section on RAM
-
-![](cpp_notes_images/27_mmu_program_sections.png)
-
-> * Since program thinks it 2n -1 memory, The MMU is going to transform between the idea the program has and the RAM we have(assigned memory by MMU).
-
-> * The memory map/Structure of program is standard format defined by OS. That’s why we can’t run directly window program on Linux.
-
-> *Memory map is divided into a lot parts
-
-![](cpp_notes_images/28_memory_map_parts.png)
-
-> * STACK: Local variable stores on stack section.
-
-> * print, statement, function calls others store on stack section.
-
-> * TEXT:Actual binary load on Text so that CPU can execute it.
-
-> * HEAP:Additional memory when we run out of stack memory also to  make things better for program, Used for run time.
-
-
-## 💾 Dynamic Memory Allocation
-
-
-![](cpp_notes_images/29_dynamic_memory_allocation.png)
-
-2nd point- full Control:  when declare a variable a=23; in stack it remove when scope is over. Developer doesn’t have full control. But in heap developer have full control when a variable comes to work and dies.
-
- >> 10:41 min
-
-![](cpp_notes_images/30_heap_pointer_setup.png)
-
-> *set up a pointer which point to heap memory.
-
-After initializing a pointer with nullptr. When p_number4=new int execute the OS is allocate a memory on heap. Variables are usually stores on stack section. It removes when variable containing scope will over. But if we allocate a memory on heap by “p_number4=new int;” . This memory will live though its scope is over. It will stay until return it to operating system. To return:
-
-![](cpp_notes_images/31_new_int_allocation.png)
-
-Use ‘delete’ to return memory to the  operating system. After return reset pointer to ‘nullptr’ is good to make it clear that no valid data pointer is pointing.
-
-> * Using ‘delete’ remove the allocated heap memory which is pointed. Not the pointer. If pointing to ‘nullptr’, delete will do nothing.
-
-> *** Always remember to release memory.
-
-> *Dangling Pointer: A pointer that doesn’t point to a valid memory address. Trying to dereferencing and using a dangling pointer  will results in undefined behaviour.
-
-How dangling pointer create:
-
-1. Uninitialized pointer.
-
-2. Delete pointer
-
-3. Multiple pointer points to same memory.
-
-Solution:
-
-1. Initialize pointer. Either with valid address or nullptr.
-
-2. Reset pointer after delete.(Either with valid address or nullptr.)
-
-3. For multiple pointer point to same address, make sure master pointer is clear/ reset.
-
-> *** Always check if pointer is nullptr or not by if-else.
-
-‘New’ fails:
-
-When allocating an array with pointer with huge size(1000000000000000000). It may fails and program can crash. We can use exception mechanism or ‘nothrow’ to prevent crashing.
-
-![](cpp_notes_images/32_new_array_fail.png)
-
-Both allocation (with for loop or without) fail.
-
-> * Solve with ‘exception mechanism’:
-
-![](cpp_notes_images/33_exception_mechanism.png)
-
-With ‘exception’ we can catch the problem. What is called ‘handle’ in the problem. Suppose we are going to set up color and color fails. UI(interface) may show black and white. But program will keep running “what()”  function will show the error.
-
-> *with ‘nothrow’: If “new” fails, we are going to get “nullptr” stored.
-
-![](cpp_notes_images/34_nothrow_example.png)
-
-For clear understanding see
-
-https://www.youtube.com/watch?v=uoCuMTzD9AE&list=PLgH5QX0i9K3q0ZKeXtF--CZ0PdH1sSbYL&index=90 // anisul islam lecture 92. Exception handling
-
-
-### 🛡️ NULL pointer safety:
-
-
-![](cpp_notes_images/35_null_pointer_safety_if.png)
-
-check if null or not.
-
-![](cpp_notes_images/36_null_pointer_safety_or.png)
-
-![](cpp_notes_images/37_null_ptr_boolean_implicit.png)
-
-> * After use delete set pointer to nullptr for safety.
-
+![Enum custom values](cpp_notes_images/cpp_notes_image_010.png)
 
 ---
 
+## Pointers & Memory
 
-### 💧 Memory Leaks:
+### Pointer
 
+A **pointer** is a special kind of variable that stores a memory address.
 
-![](cpp_notes_images/38_memory_leaks_example.png)
+```cpp
+int* int_num{};       // initialized with nullptr (not pointing anywhere)
+int* int_num{nullptr}; // explicitly nullptr
 
-![](cpp_notes_images/39_memory_leak_double_alloc.png)
+double* frac_num{};   // will point to a double type variable
+```
 
-Should delete 1st then allocate 2nd.
+> `**` Pointers of `int`, `double`, `char` etc. are **all the same size** — they only store addresses.
 
-![](cpp_notes_images/40_delete_then_allocate.png)
+```cpp
+char *ptr{"Hello world"}; // Points to 1st character
+// Some compilers (MSVC) won't compile this; GCC gives a warning.
 
-After local scope is over, pointer is gonna die, but allocated memory will remain and loose access.
+cout << ptr;   // Prints whole string
+cout << *ptr;  // Prints 1st character 'H'
+*ptr = 'B';    // May give error — compiler treats it as const char array
+```
 
-These memory leaks may causes program crash.
+To modify: use array instead:
+```cpp
+char msg[10] = "Hello world";
+// OR
+const char *ptr{"Hello world"}; // no warning, can't modify
+```
 
+**Dereferencing:** reading the value at the pointer's address → `cout << *ptr;`
 
-### 📊 Dynamic array: Array stores on the heap.
+**String with pointer:**
+```cpp
+const char* p_msg = "Hello World!"; // correct
+// printf p_msg → prints whole string
+// *p_msg → prints first character
+```
 
+> `***` Without `const`, compiler warns/refuses because the string becomes a constant char array, but the pointer type doesn't guarantee immutability.
 
-![](cpp_notes_images/41_dynamic_array_heap.png)
+```cpp
+int *ptr;      // contains junk address — DANGEROUS
+int a = 12;
+int *ptr = &a; // CORRECT — always initialize
+```
 
-![](cpp_notes_images/42_dynamic_array_code.png)
+![Pointer basics](cpp_notes_images/cpp_notes_image_011.png)
 
-Release Memory:
+![Pointer diagram](cpp_notes_images/cpp_notes_image_012.png)
 
-![](cpp_notes_images/43_release_memory_delete.png)
-
-Dynamic arrays are created at run time not compile time.
-
-![](cpp_notes_images/44_dynamic_array_explanation.png)
-
-![](cpp_notes_images/45_dynamic_array_explanation2.png)
-
-![](cpp_notes_images/46_dynamic_array_explanation3.png)
-
-Reference: A reference is an alias (another name) for an existing variable. It does not create a new variable or occupy memory, it just gives another way to access the same memory. Doesn’t hold addresses as pointer.
-
-![](cpp_notes_images/47_reference_alias_intro.png)
-
-If we change reference value or variable value, both contribute same changes.
-
-> ** “&ref” and “&s” both has same memory address.
-
-![](cpp_notes_images/48_reference_same_address.png)
-
-![](cpp_notes_images/49_pointer_reassign_vs_reference.png)
-
-![](cpp_notes_images/50_pointer_vs_reference_code.png)
-
-Here ‘S and ref’ value will changes to 12.
-
-Use case: *if want to modify original variable inside a function. This save memories.
-
-![](cpp_notes_images/51_reference_modify_in_function.png)
-
-> * Return reference by function to a local or global variable.
-
-![](cpp_notes_images/52_return_reference_function.png)
-
-![](cpp_notes_images/53_return_reference_example.png)
-
-> * Using “const” before reference makes the variable unchangeable. This constant only applies to reference. Not variable. Can’t changes variable value with “const reference”. But variable itself can changes its value.
-
-![](cpp_notes_images/54_const_reference_example.png)
-
-Value will changes to 12.
-
+![String pointer](cpp_notes_images/cpp_notes_image_013.png)
 
 ---
 
-> *** size(), sizeof() function return the size. But for character array it includes ‘null’ . But for string  size() don’t count null.
+### Memory Map
 
-> *** strlen() is used for character array. Not for string.
+When a program runs, it runs on RAM. Each process thinks it owns `0 ~ 2ᴺ` amount of memory — this is **virtual memory**.
 
-		char *a=”asdf”;     // this is string literal. Not modifiable.
+The program goes through a CPU section called **MMU (Memory Management Unit)** which maps the program's virtual memory to actual RAM.
 
-		Char a[]=”asdf”;   // this is character array. Modifiable. Use stack memory.
+> Parts likely not to be used are discarded from RAM. MMU transforms between the virtual idea and real RAM.
 
-Using “const” is safe in string literal.
+> The memory map/structure is a standard format defined by the OS. That's why Windows programs can't run directly on Linux.
 
-> ***String literal is actually a character array. When we assign it to “const char * ”, it automatically converts into a pointer to 1st element. String has not fixed amount of memory, cause it internally implemented as a class and it stores its data as const char pointer.
+**Memory Sections:**
 
-	Const char *msg=”Hello I am here.”;
+| Section | Purpose |
+|---------|---------|
+| **STACK** | Local variables, print statements, function calls |
+| **TEXT** | Actual binary code loaded for CPU execution |
+| **HEAP** | Additional memory for runtime use; dynamic allocation |
 
-![](cpp_notes_images/55_string_char_pointer_const.png)
+![Memory Map](cpp_notes_images/cpp_notes_image_014.png)
 
-Character array lives on read only memory. Can’t modify.
-
-
----
-
-swap 2 number.
-
-1. a=a+b;     b=a-b;    a=a-b;
-
-2. a=a^b;      b=a^b;   a=a^b;
-
+![Memory Map detailed](cpp_notes_images/cpp_notes_image_015.png)
 
 ---
 
+### Dynamic Memory Allocation
 
-### ↩️ Returning from function as Reference: Usually function returns values(int, char etc). But sometime compilers are smart enough that that return reference instead of values. Avoid copies. See below
+- Variables declared in stack are removed when their scope ends — the developer has no control.
+- With **heap**, the developer has full control over when a variable comes into existence and when it dies.
 
+```cpp
+int* p_number4 = new int; // OS allocates memory on heap
 
-![](cpp_notes_images/56_swap_numbers_xor.png)
+delete p_number4;         // Return memory to OS
+p_number4 = nullptr;      // Reset pointer — good practice
+```
 
-![](cpp_notes_images/57_function_overload_examples.png)
+> `*` `delete` removes allocated heap memory (what pointer points to). It does **not** remove the pointer itself. Deleting `nullptr` does nothing.
 
-![](cpp_notes_images/58_function_overload_int_double.png)
+> `***` **Always remember to release memory.**
 
-      Output:
+![Dynamic allocation](cpp_notes_images/cpp_notes_image_016.png)
 
-Here both addresses are same. Its returns the reference. Using reference mechanism.
+![new and delete](cpp_notes_images/cpp_notes_image_017.png)
 
+**'New' fails:**
 
----
+When allocating huge sizes, `new` may fail and crash the program. Use exception mechanism or `nothrow`:
 
+```cpp
+// Exception mechanism:
+try {
+    int* p = new int[1000000000000];
+} catch (std::bad_alloc& e) {
+    cout << e.what(); // Program keeps running
+}
 
-## ⚙️ Function Overloaded: Means we can declare multiple function with same name in the same scope, but with different parameter lists. Like parameter type(int, double, float).
+// nothrow:
+int* p = new(nothrow) int[1000000000000];
+if (!p) { /* handle nullptr */ }
+```
 
+📎 [Anisul Islam — Exception Handling](https://www.youtube.com/watch?v=uoCuMTzD9AE&list=PLgH5QX0i9K3q0ZKeXtF--CZ0PdH1sSbYL&index=90)
 
-![](cpp_notes_images/59_function_overload_allowed1.png)
+![New fails exception](cpp_notes_images/cpp_notes_image_018.png)
 
-![](cpp_notes_images/60_function_overload_allowed2.png)
-
-![](cpp_notes_images/61_function_overload_allowed3.png)
-
-Not allowed.(below)
-
-![](cpp_notes_images/62_function_overload_not_allowed1.png)
-
-![](cpp_notes_images/63_function_overload_not_allowed2.png)
-
-
----
-
-![](cpp_notes_images/64_when_overload_called.png)
-
-When ‘int’ type variable is passed as argument “int overload will called”. Same as double and others.
-
-
----
-
-
-### ⚡ lambda Function:
-
-
-![](cpp_notes_images/65_lambda_syntax.png)
-
-![](cpp_notes_images/66_lambda_example_full.png)
-
-> * Return type is not important. If keep blank, compiler is gonna deduce its type by itself.
-
-> * Use ‘;’ after function body. Because lambda function is a statement.
-
-![](cpp_notes_images/67_lambda_with_return.png)
-
-![](cpp_notes_images/68_lambda_capture_intro.png)
-
-![](cpp_notes_images/69_lambda_capture_variable.png)
-
-Here  if lambda function return something, it going to assign to variable ‘fun’.
-
-Capture lists on lambda function: Capture list is a part of lambda function inside the square brackets which tells the lambda function, which variable from the surrounding scope it can use and how(like using a copy of a variable or references).
-
-> * When a lambda function capture values, it made a copy of that variable on the memory. So if that variable is changed later it will not effect on that lambda function. Lambda function retain the old value unless we use variable as reference. See below…
-
-![](cpp_notes_images/70_lambda_capture_by_value.png)
-
-![](cpp_notes_images/71_lambda_capture_value_copy.png)
-
-See when we use variable as reference:
-
-![](cpp_notes_images/72_lambda_capture_by_reference.png)
-
-![](cpp_notes_images/73_lambda_reference_address.png)
-
-If we print the addresses, we can clearly see that both(variable a, and lambda function variable a) variable have different addresses.
-
+![nothrow](cpp_notes_images/cpp_notes_image_019.png)
 
 ---
 
-> *** ”[=]” using this as capture list it will grab all variable from the surrounding scope. (To capture value)
+### Dangling Pointer
 
-> *** ”[#]” using this as capture list it will grab all variable from the surrounding scope. (To capture as 	       	references)
+A **dangling pointer** doesn't point to a valid memory address. Dereferencing it causes **undefined behaviour**.
 
-> *** using reference, all have same addresses.
+**How dangling pointers are created:**
+1. Uninitialized pointer
+2. Deleted pointer
+3. Multiple pointers pointing to the same memory
 
+**Solutions:**
+1. Always initialize pointer — either with a valid address or `nullptr`
+2. Reset pointer after `delete` (valid address or `nullptr`)
+3. For multiple pointers to same address — make sure the master pointer is cleared/reset
 
----
+> `***` Always check `if (ptr != nullptr)` before using a pointer.
 
-
-## 📐 Function Template:
-
-
-
-### 📐 Function Template by value: Function Template is a mechanism in c++ to set up a blueprint for functions, But compiler going generate the actual code when it sees the function called. Means to avoid code repetition.
-
-
-![](cpp_notes_images/74_function_template_intro.png)
-
-Here there are multiple function overload. They are doing the work. To minimise this type of multiple overload of same work. We can use Template.
-
-![](cpp_notes_images/75_function_template_blueprint.png)
-
-> ** can also pass string by argument.
-
-Function templates are not c++ code. It just a function blueprint.
-
-![](cpp_notes_images/76_function_template_code.png)
-
-If data types are not same passing as argument, we can  explicitly set the type with<double>. This basically tells the compiler to generate double/int etc. template instance function for this calling. And implicitly convert other type to determined type. In below example ”a” variable int type and will convert to double.
-
-> ** We can see this internal conversion of function template on cppinsights.io.
-
-![](cpp_notes_images/77_function_template_explicit_type.png)
-
-This will give no error. Cause we explicitly tell to generate a double type template instance function. Otherwise, different type will not accept. Will throw an error.
-
-If we use sizeof() to see size of the “re” variable. We can see is it double, int etc.
-
-Template type parameter by references: Recall references procedure, template procedure. All same concept.
-
-![](cpp_notes_images/78_template_by_reference.png)
-
-![](cpp_notes_images/79_template_overload_confusion.png)
-
-maximum(a,b); // this is used for both template with value and with reference. That’s why get confused.
-
+![Dangling pointer](cpp_notes_images/cpp_notes_image_020.png)
 
 ---
 
- Template Specialization: This is specially for “const char pointer” like:
+### NULL Pointer Safety
 
-	const char* x=”asdf”;
+```cpp
+if (ptr != nullptr) { /* safe to use */ }
+// OR: pointer address implicitly converts to boolean (null == 0)
+if (ptr) { /* safe */ }
+```
 
-for const char pointer regular method will not work. There is a special template mechanism for it.
+> After using `delete`, always set pointer to `nullptr` for safety.
 
-![](cpp_notes_images/80_template_specialization_const_char.png)
+![NULL pointer safety](cpp_notes_images/cpp_notes_image_021.png)
 
-Instead it use c++ template library function “strcmp” to compare. See on www.cppreference.com about strcmp.
+---
 
-In order to use template specialization we have to declare primary template like below…
+### Memory Leaks
 
-![](cpp_notes_images/81_template_specialization_primary.png)
+If a pointer changes its pointing location to a second allocation without deleting the first, the first memory block becomes unreachable → **memory leak**.
 
-![](cpp_notes_images/82_template_specialization_in_order.png)
+```cpp
+// WRONG:
+int* p = new int(55);
+p = new int(99); // lost access to 55 — memory leak!
 
-In order to use template specialization we have to declare primary template like below…
+// CORRECT:
+delete p;
+p = new int(99);
+```
 
-![](cpp_notes_images/83_template_specialization_code1.png)
+After a local scope ends, the pointer dies but heap-allocated memory remains — another source of memory leaks. These can cause program crashes.
 
-![](cpp_notes_images/84_template_specialization_code2.png)
+![Memory leak](cpp_notes_images/cpp_notes_image_022.png)
 
+---
 
-## 🆕 C++ 20:
+### Dynamic Arrays
 
+Arrays stored on the **heap**.
 
-Concept: Concept is a mechanism to set up constrain or restriction on template parameter of  our function template. For example we can set that function to be called only integer and we call it something which isn’t ans integer, it will give a compiler error.
+```cpp
+int* arr = new int[size]; // size determined at runtime
+// ...
+delete[] arr; // release array memory
+arr = nullptr;
+```
 
-![](cpp_notes_images/85_concept_integral_example.png)
+Dynamic arrays are created at **run time**, not compile time.
 
-If we set double instead of int, this will compiler error. Cause we set “integral” type to accept as argument in function template.
+![Dynamic array](cpp_notes_images/cpp_notes_image_023.png)
 
-These concepts are introduced in c++20. So use “-std=c++20” during compiling.
+![Dynamic array release](cpp_notes_images/cpp_notes_image_024.png)
 
-![](cpp_notes_images/86_concept_std_c20_compile.png)
+![Dynamic array explanation](cpp_notes_images/cpp_notes_image_025.png)
 
-Concepts are introduced in c++20. Before that we can use this(below) inside function template. And set a custom message if condition does not meet.
+---
 
-![](cpp_notes_images/87_concept_before_c20_static_assert.png)
+### Reference
 
-Type Traits: Intro on C++11. A type trait is a small template “tool” that tells you something about a type, or transforms a type, at compile time. On above we are checking “T” is an integral or not by “is_integral<>”. Boolean value. Also Use this as requires. See below
+A **reference** is an alias (another name) for an existing variable. It does not create a new variable or occupy memory — it just provides another way to access the same memory. Unlike pointers, it does not hold addresses.
 
-![](cpp_notes_images/88_type_traits_requires_example.png)
+```cpp
+int s = 5;
+int& ref = s; // ref is an alias for s
+```
 
-We can use type traits on requires.
+- Changing `ref` or `s` both affect the same memory.
+- `&ref` and `&s` have the **same memory address**.
+- A pointer can be reassigned to another variable — a **reference cannot**.
 
-![](cpp_notes_images/89_type_traits_in_requires.png)
+![Reference basics](cpp_notes_images/cpp_notes_image_026.png)
 
-Some Type Traits:
+![Reference reassign](cpp_notes_images/cpp_notes_image_027.png)
 
-![](cpp_notes_images/90_some_type_traits.png)
+Here `S` and `ref` both change to `12`.
 
-Some ways to declare concepts:
+**Use case:** Modifying the original variable inside a function (saves memory).
 
-![](cpp_notes_images/91_concept_declaration_ways1.png)
+![Reference in function](cpp_notes_images/cpp_notes_image_028.png)
 
-![](cpp_notes_images/92_concept_declaration_ways2.png)
+**Returning reference from a function to a local or global variable:**
 
-Syntax 3 is only allowed for, when we use “auto”.(Below)
+![Return reference](cpp_notes_images/cpp_notes_image_029.png)
 
-![](cpp_notes_images/93_concept_syntax3_auto.png)
+**`const` reference:**
 
-![](cpp_notes_images/94_concept_syntax3_auto_example.png)
+```cpp
+const int& ref = s;
+// Can't change s through ref, but s itself can still change its value.
+```
 
-Example for Type Trait:
+![const reference](cpp_notes_images/cpp_notes_image_030.png)
 
-A type trait is a template utility in the C++ standard library (in <type_traits>) that allows you to query information about a type or transform a type at compile time.
+---
 
-Think of type traits as little “questions” or “tools” about types:
+## Functions
 
+### String & Character Array
+
+> `***`
+> - `size()` / `sizeof()` return size. For **character arrays**, this **includes** the null terminator `\0`. For `string`, `size()` does **not** count null.
+> - `strlen()` is for character arrays, not `string`.
+
+```cpp
+char *a = "asdf";   // string literal — NOT modifiable (read-only memory)
+char a[] = "asdf";  // character array — modifiable (stack memory)
+```
+
+Use `const` for string literals:
+```cpp
+const char *msg = "Hello I am here.";
+```
+
+> `***` A string literal is actually a character array. When assigned to `const char*`, it automatically converts to a pointer to its first element. `string` internally uses `const char*` and stores data in separately allocated heap memory.
+
+Character arrays live in **read-only memory** — cannot be modified.
+
+---
+
+### Swap Two Numbers
+
+```cpp
+// Method 1 (arithmetic):
+a = a + b;  b = a - b;  a = a - b;
+
+// Method 2 (XOR):
+a = a ^ b;  b = a ^ b;  a = a ^ b;
+```
+
+---
+
+### Returning Reference from Function
+
+Usually functions return values. But sometimes the compiler returns a reference instead to avoid copies.
+
+![Return by reference](cpp_notes_images/cpp_notes_image_031.png)
+
+Both addresses shown are the same — it returns a reference using the reference mechanism.
+
+---
+
+### Function Overloading
+
+**Function overloading** allows multiple functions with the same name in the same scope, but with different parameter lists (different parameter types: `int`, `double`, `float`, etc.).
+
+![Function overloading allowed](cpp_notes_images/cpp_notes_image_032.png)
+
+![Function overloading not allowed](cpp_notes_images/cpp_notes_image_033.png)
+
+When an `int` variable is passed as argument, the `int` overload is called. Same for `double` and others.
+
+---
+
+### Lambda Function
+
+```cpp
+auto fun = [](int a, int b) /* return type optional */ {
+    return a + b;
+};  // note the semicolon — lambda is a statement
+```
+
+- Return type is optional; the compiler deduces it automatically.
+- Use `;` after the function body.
+
+![Lambda basics](cpp_notes_images/cpp_notes_image_034.png)
+
+If lambda returns something, it is assigned to the variable `fun`.
+
+**Capture lists:**
+
+The capture list (inside `[]`) tells the lambda which variables from the surrounding scope it can use and how.
+
+- By default, captured values are **copies** — changes to the original variable after capture won't affect the lambda.
+- Use `&` to capture by **reference**.
+
+![Lambda capture by value](cpp_notes_images/cpp_notes_image_035.png)
+
+![Lambda capture by reference](cpp_notes_images/cpp_notes_image_036.png)
+
+Addresses of value-captured and reference-captured variables differ (value) or are the same (reference).
+
+```cpp
+[=]  // capture all variables by value
+[&]  // capture all variables by reference
+```
+
+> `***` Using reference, all variables share the same address.
+
+---
+
+### Function Template
+
+**Function Template** is a mechanism to create a blueprint for functions. The actual code is generated by the compiler when the function is called — avoids code repetition.
+
+```cpp
+template <typename T>
+T maximum(T a, T b) {
+    return (a > b) ? a : b;
+}
+```
+
+`T` is a placeholder for the data type. The compiler generates a typed version of the function at the call site.
+
+> `**` Can also pass `string` as argument.
+
+> Function templates are **blueprints**, not actual C++ code.
+
+![Template basic](cpp_notes_images/cpp_notes_image_037.png)
+
+**Explicit type specification:**
+
+```cpp
+maximum<double>(a, b); // forces double template instance; implicitly converts other types
+```
+
+![Template explicit type](cpp_notes_images/cpp_notes_image_038.png)
+
+> Use [cppinsights.io](https://cppinsights.io) to inspect internal template instantiation.
+
+**Template by reference:**
+
+![Template by reference](cpp_notes_images/cpp_notes_image_039.png)
+
+> If you call `maximum(a, b)` where both a template-by-value and a template-by-reference exist, the compiler gets confused. Disambiguation is needed.
+
+---
+
+### Template Specialization
+
+Used specially for `const char*` pointers:
+
+```cpp
+const char* x = "asdf";
+```
+
+For `const char*`, regular templates don't work. Use `strcmp` (from `<cstring>`) for comparison. A primary template declaration is required first.
+
+📎 See [cppreference.com — strcmp](https://en.cppreference.com/w/cpp/string/byte/strcmp)
+
+![Template specialization](cpp_notes_images/cpp_notes_image_040.png)
+
+![Template specialization full code](cpp_notes_images/cpp_notes_image_041.png)
+
+---
+
+## C++20 Features
+
+### Concepts
+
+A **concept** is a mechanism to set constraints/restrictions on template parameters.
+
+```cpp
+#include <concepts>
+
+template <std::integral T>
+T add(T a, T b) { return a + b; }
+
+add(1, 2);     // OK
+add(1.0, 2.0); // Compiler error — not integral
+```
+
+> Compile with `-std=c++20`
+
+![Concepts basic](cpp_notes_images/cpp_notes_image_042.png)
+
+**Before C++20 (C++11 `static_assert`):**
+
+```cpp
+template <typename T>
+T add(T a, T b) {
+    static_assert(std::is_integral<T>::value, "T must be integral!");
+    return a + b;
+}
+```
+
+![static_assert](cpp_notes_images/cpp_notes_image_043.png)
+
+---
+
+### Type Traits
+
+Introduced in **C++11**. A **type trait** is a small template "tool" that tells you something about a type, or transforms a type, at compile time.
+
+```cpp
+#include <type_traits>
+std::is_integral<T>::value  // is T an integer?
+std::is_const<T>::value     // is T const-qualified?
+std::is_same<T, U>::value   // are T and U the same type?
+```
+
+**Think of type traits as compile-time questions:**
 1. Is this type an integer?
-
 2. Is this type const-qualified?
-
 3. What happens if I remove a pointer from this type?
-
 4. Are these two types the same?
 
-![](cpp_notes_images/95_type_traits_example_full.png)
+**`if constexpr` (C++17):**
 
-Here the compiler removes the unused branch at compile time → no runtime cost.
+```cpp
+template <typename T>
+void print(T val) {
+    if constexpr (std::is_integral_v<T>) {
+        cout << "Integer: " << val;
+    } else {
+        cout << "Not integer: " << val;
+    }
+}
+```
 
-Here without “constrxpr” if is checked at run time. So both branch(if, else) must compile because compiler doesn’t know which condition will be true.
+- `if constexpr` chooses the branch at **compile time**.
+- The unused branch is **discarded before code generation** — zero runtime cost.
+- Without `constexpr`: both branches must compile (runtime check).
+- With `constexpr`: irrelevant branch is erased by the compiler.
 
-But with “constexpr”
+> `constexpr` is a keyword telling the compiler to evaluate the value at compile time.
 
-> * if constexpr means the compiler chooses the branch at compile time.
+![Type traits](cpp_notes_images/cpp_notes_image_044.png)
 
-> * The unused branch is discarded before code generation — it’s as if it never existed. Means for (“print(42)”) compiler will keep only  if part. And for (“print(3.14)”) compiler will keep else part.
+![if constexpr](cpp_notes_images/cpp_notes_image_045.png)
 
-![](cpp_notes_images/96_constexpr_if_branch_selection.png)
+**Some type traits:**
 
-Generated machine code for print(42) contains no trace of the "not integral" branch.
-Generated machine code for print(3.14) contains no trace of the "integral" branch.
-
-The compiler erases the irrelevant branch at compile time.
-
-Constexpr- is a keyword in c++. That tells to evaluate the value in compile time.
-
-See this from cppinsights.io  comparing with and without “constexpr”
-
-![](cpp_notes_images/97_constexpr_cppinsights_with.png)
-
-![](cpp_notes_images/98_constexpr_cppinsights_without.png)
-
-
-### 🏗️ Build own Concept/Custom concept:
-
-
-Example 1:
-
-![](cpp_notes_images/99_custom_concept_example1.png)
-
-Line- 9,10: Custom concept. Here we are setting function parameter have to integral type.
-
-Line-13: function checks whether our parameter satisfy the concept. If one parameter is float it will give compiler error.
-
-For int value the type trait (is_integral_v) is return true and concept is satisfied. And function template is gonna execute.
-
-For double, float value we can use “is_floating_point<T>”.
-
-Diff way to use concepts:
-
-![](cpp_notes_images/100_custom_concept_diff_ways1.png)
-
-![](cpp_notes_images/101_custom_concept_diff_ways2.png)
-
-![](cpp_notes_images/102_custom_concept_diff_ways3.png)
-
-![](cpp_notes_images/103_custom_concept_diff_ways4.png)
-
-Example 2:
-
-![](cpp_notes_images/104_custom_concept_example2_multipliable.png)
-
-Line-10,11: requires 2 parameter which are multipliable. This will not give multiply of “a” ans “b” If pass (char)  concepts will not satisfy. Error
-
-Example 3: If we want “a” will be int and “b” will be double. See below. Use diff type name.
-
-![](cpp_notes_images/105_custom_concept_example3_two_types.png)
-
+![Type traits list](cpp_notes_images/cpp_notes_image_046.png)
 
 ---
 
-Deep dig into ‘Requires’ :
+### Custom Concepts
 
-![](cpp_notes_images/106_requires_deep_dive_simple.png)
+**Ways to declare concepts:**
 
- you can only put valid expressions involving the types/objects. requires doesn’t test boolean conditions — it just checks “is this expression well-formed?” check given expression is vakid or not.
+![Concept declaration ways](cpp_notes_images/cpp_notes_image_047.png)
 
-Inside requires { ... }, each line is an expression requirement.
+> Syntax 3 is only allowed when using `auto`.
 
-It only checks whether the expression is valid (well-formed) — not whether its value is true or false.
+**Example 1 — Integral constraint:**
 
-![](cpp_notes_images/107_requires_sizeof_always_valid.png)
+```cpp
+template <typename T>
+concept Integral = std::is_integral_v<T>;  // line 9,10
 
-![](cpp_notes_images/108_requires_sizeof_invalid_check.png)
+template <Integral T>                       // line 13
+T add(T a, T b) { return a + b; }
+```
 
-Here “sizeof(T)<=4” is simple requirement. Only check syntax.
+- For `int`: `is_integral_v<T>` is `true` → concept satisfied.
+- For `float`/`double`: compiler error.
 
-Although b is double. It should give compiler error cause concepts does not meet(double size 8byte). It gives ans. Cause:
+For floating point: use `std::is_floating_point<T>`.
 
-sizeof(T) <= 4 is always a valid expression (it produces a true value).
+![Custom concept example 1](cpp_notes_images/cpp_notes_image_048.png)
 
-The compiler says  “requirement satisfied” regardless of whether the condition is true or false.
+**Different ways to use concepts:**
 
-It doesn’t enforce the size check.
+![Concept usage ways](cpp_notes_images/cpp_notes_image_049.png)
 
-![](cpp_notes_images/109_requires_sizeof_correct_way.png)
+**Example 2 — Requires multipliable:**
 
-This is correct way to set sizeof(). This will check conditions are true or false. And this will give error cause ‘b’ size is 8 byte. We set <=4.
+```cpp
+// Requires 2 parameters that are multipliable
+// If char is passed, concept won't be satisfied → error
+```
 
-Or we can use nested requirement(requires inside requires). See below(No error)
+![Custom concept example 2](cpp_notes_images/cpp_notes_image_050.png)
 
-![](cpp_notes_images/110_requires_nested_requirement.png)
+**Example 3 — Different types for parameters:**
 
-Example *: Using Logical operator...
+```cpp
+// 'a' must be int, 'b' must be double — use different type names
+```
 
-![](cpp_notes_images/111_requires_logical_operator.png)
-
-![](cpp_notes_images/112_requires_example_double_star.png)
-
-Exit(): “exit(1)” terminate the whole program. So if this is also used in used in a function, it stop the entire program.
-
-![](cpp_notes_images/113_exit_function_example.png)
-
-![](cpp_notes_images/114_exit_code_example.png)
-
-![](cpp_notes_images/115_exit_codes_explanation.png)
-
-exit(1) → “Program ended due to an error.” // abnormal termination of the program
-
+![Custom concept example 3](cpp_notes_images/cpp_notes_image_051.png)
 
 ---
 
-> *** If we pass an array to a function is pass its reference through pointer. Not a copy.
+### Deep Dive into Requires
 
+`requires { ... }` tests only **if an expression is well-formed** (valid syntax), not whether its value is true or false.
 
-## 🏛️ OOP
+```cpp
+requires { sizeof(T) <= 4; }  // Only checks syntax — always passes!
+```
 
+> Even if `T` is `double` (8 bytes), this passes because `sizeof(T) <= 4` is syntactically valid.
 
+**Correct way to check size constraint:**
 
-### 🏗️ Class: Class is a mechanism to build our own type to use them like we have been using built in type(int, double). Its like a blueprint to create object.
+```cpp
+requires { requires sizeof(T) <= 4; }  // Nested requires — checks condition is true
+```
 
+![Requires simple](cpp_notes_images/cpp_notes_image_052.png)
 
+![Requires nested](cpp_notes_images/cpp_notes_image_053.png)
 
-### 📦 Object: An object is a real instance(copy) of that class. Like a actual car built from blueprint.
+**Logical operators in requires:**
 
+![Requires logical operators](cpp_notes_images/cpp_notes_image_054.png)
 
-![](cpp_notes_images/116_class_blueprint_example.png)
+**`exit()` function:**
 
-> * Public means after “public” all parameter are accessible outside of the class.
+```cpp
+exit(0); // Program ended successfully
+exit(1); // Program ended due to an error (abnormal termination)
+```
 
-> * If public is not defined. Then in general all parameter are indicated to private. Means can’t  access outside of the class. (Members of class are private by default).
-
-> * Public, private, protected are called access specifier.
-
-> * if public is not defined on above example. All member will be private. Line 19,20, 21 can’t write. Compiler will give error.
-
-> * Private members can be accessible from inside class.
-
-> * Objects(ob1) are run time data.
-
-> * Member variable should be set to private.
-
-![](cpp_notes_images/117_class_private_members.png)
-
-
-### 🔧 Constructor:
-
-
-![](cpp_notes_images/118_constructor_types.png)
-
-Constructor are 2 type.
-
-1. Default constructor.  //Method have no parameter line: 13
-
-2. Parameterized constructor. //Have parameter Line: 17
-
-![](cpp_notes_images/119_constructor_parameterized.png)
-
-> * This is how private members can be accessible inside class.
-
-> * If an object is declare default constructor will be called. Line: 13
-
-> * if not defined(default constructor), compiler will automatically generate default empty constructor.
-
-Or inside main
-
-“mycls ob1(12,22);” parameterized constructor will be called. Line: 17. default will not be called.
-
-> * If compiler sees any constructor, its not gonna generate default constructor.
-
-> * We can declare default constructor 2 ways; on line:13 & 16
-
-![](cpp_notes_images/120_constructor_default_declaration.png)
-
-
-### 🔒 Setter & Getter:
-
-
-Private members are not accessible from outside. Both are methods to modify or read member variable of a class.
-
+> `exit(1)` terminates the **entire program**, even if called inside a function.
 
 ---
 
-![](cpp_notes_images/121_ifndef_include_guard.png)
+## OOP — Object-Oriented Programming
 
-Means this constant is define on any other file of the project and we are not sure, we can use this. It says, if below code is not defined, I am defining here, else skip. Otherwise, if same things defined in many places, show error.
+### Class & Object
 
+- **Class:** A mechanism to build custom types, like a blueprint to create objects.
+- **Object:** A real instance (copy) of that class. Like an actual car built from a blueprint.
+
+**Access specifiers:** `public`, `private`, `protected`
+
+- `public`: members accessible from outside the class.
+- `private` (default if not specified): accessible only from inside the class.
+- Member variables should generally be **private**.
+- Objects are **runtime data**.
+
+```cpp
+class MyCls {
+private:
+    int x, y;
+public:
+    // accessible from outside
+};
+```
+
+![Class basics](cpp_notes_images/cpp_notes_image_055.png)
+
+> If no access specifier is defined, all members are **private** by default.
 
 ---
 
-“::” Scope Resolution Operator: Used when a function of a class us defined on other file.
+### Constructor
 
-![](cpp_notes_images/122_scope_resolution_operator.png)
+**Types of Constructors:**
 
-But we have to mention function prototype inside the class. Like: Cylinder(double red_…..);
+1. **Default constructor** — no parameter
+2. **Parameterized constructor** — has parameters
 
+```cpp
+MyCls ob1;        // calls default constructor
+MyCls ob1(12,22); // calls parameterized constructor
+```
+
+- If no constructor is defined, the compiler generates an empty default constructor.
+- If **any** constructor is defined, the compiler does **not** generate a default one.
+- Default constructor can be declared two ways.
+
+![Constructor types](cpp_notes_images/cpp_notes_image_056.png)
+
+![Constructor example](cpp_notes_images/cpp_notes_image_057.png)
 
 ---
 
-![](cpp_notes_images/123_pointer_object_management.png)
+### Setter & Getter
 
-Here “ - >” is a dereferencing operator. Works like (*c2).findcir();
+Private members are not accessible from outside. Setters and getters are methods to modify or read member variables of a class.
 
-c2 pointer will be on stack memory but obj will be on heap.
+![Setter Getter](cpp_notes_images/cpp_notes_image_058.png)
 
-Direct creating object creates on stack and with using pointer object will create on heap. Remember to release memory.
+---
 
-![](cpp_notes_images/124_pointer_vs_stack_object.png)
+### ifndef & Scope Resolution Operator
 
-dangling pointer is dangerous. Holds old memory. So after deleting set c2=nullptr;
+**`#ifndef`:** "If Not Defined" — used to prevent multiple definitions of the same thing across files.
 
+```cpp
+#ifndef MY_HEADER_H
+#define MY_HEADER_H
+// code
+#endif
+```
 
-### 💥 Destructors:
+**`::` Scope Resolution Operator:** Used when a function of a class is defined in another file.
 
+```cpp
+Cylinder::Cylinder(double rad, double h) { ... }
+// Function prototype must be declared inside the class
+```
 
-![](cpp_notes_images/125_destructor_declaration.png)
+![Scope resolution](cpp_notes_images/cpp_notes_image_059.png)
 
-![](cpp_notes_images/126_destructor_when_called.png)
+---
 
-> * When local stack objects goes out of scape then destructor is going to be called by compiler.
+### Managing Class Objects by Pointer
 
-> * When heap object is released with delete.
+```cpp
+Cylinder* c2 = new Cylinder(3.5, 4.0);
+c2->findCircumference(); // dereferences and calls method
+// equivalent to: (*c2).findCircumference();
+```
 
-> *** Destructor has no parameter.
+- `c2` pointer lives on **stack**; the object lives on **heap**.
+- Direct object creation → **stack**. Pointer-based → **heap**.
+- Remember to release: `delete c2; c2 = nullptr;`
 
-> *** Destructor does not called by compiler automatically for heap data. We have to release memory like line 32(below)
+![Object by pointer](cpp_notes_images/cpp_notes_image_060.png)
 
-> *** The compiler calls destructor for objects with automatic storage duration when they leave scope.
+> Dangling pointer is dangerous. After `delete`, always reset to `nullptr`.
 
-If I have 3 objects(d1,d2,d3), destructor will call 3 times. But in reverse order. ‘d3’ destructor will call 1st and d1 destructor in last.
+---
 
-![](cpp_notes_images/127_destructor_order_explained.png)
+### Destructor
 
-> * “d1” is a local object. It destroyed when main() exits its scope after line 39 and before the program returns from main(line 41);
+**Destructors** are called by the compiler to destroy objects.
 
-> * ”d1” lives in stack. When main ends, C++ compiler automatically calls destructor. Memory released for ‘d1’ object.
+**When is a destructor called?**
+- When a local stack object goes out of scope.
+- When a heap object is released with `delete`.
 
-![](cpp_notes_images/128_destructor_d1_stack.png)
+> `***` Destructor has **no parameters**.
 
-In line 23 string_view
+> `***` Compiler does **not** call destructor automatically for heap data — you must use `delete`.
 
-![](cpp_notes_images/129_string_view_in_destructor.png)
+> `***` Compiler calls destructors for objects with automatic storage duration when they leave scope.
 
-![](cpp_notes_images/130_string_view_code.png)
+If 3 objects (`d1`, `d2`, `d3`) exist, destructors are called **in reverse order** (`d3` first, `d1` last).
 
-Diff Bet string_view & string:
+```cpp
+// d1 is a local object → destructor called when main() exits its scope
+// d1 lives in stack → C++ compiler calls destructor automatically
+```
 
-![](cpp_notes_images/131_string_view_vs_string.png)
+![Destructor](cpp_notes_images/cpp_notes_image_061.png)
 
-![](cpp_notes_images/132_string_view_vs_string_code1.png)
+![Destructor order](cpp_notes_images/cpp_notes_image_062.png)
 
-![](cpp_notes_images/133_string_view_vs_string_code2.png)
+**`string_view` vs `string`:**
 
-Pass an object by value: see 22:00:00 hr
+![string_view vs string](cpp_notes_images/cpp_notes_image_063.png)
 
-“this” Pointer:  ‘this’ is a special kind of pointer, maintain by c++ to manipulate the current object. This ‘this’ pointer contains the address of the current object.
+---
 
-![](cpp_notes_images/134_this_pointer_intro.png)
+### this Pointer
 
-//"this" will print current object address
+`this` is a special pointer maintained by C++ to manipulate the **current object**. It contains the address of the current object.
 
-![](cpp_notes_images/135_this_pointer_print_address.png)
+```cpp
+cout << this; // prints current object address
+```
 
-Not exactly pointing to the current object member(above).
+![this pointer](cpp_notes_images/cpp_notes_image_064.png)
 
+**Chained call using Pointer:**
 
-#### Chained call using Pointer:
+![Chained call pointer](cpp_notes_images/cpp_notes_image_065.png)
 
+**Chained call using Reference:**
 
-![](cpp_notes_images/136_chained_call_pointer.png)
+```cpp
+// 'const' is important to include here
+```
 
+![Chained call reference](cpp_notes_images/cpp_notes_image_066.png)
 
-#### Chained call using Reference:
+---
 
+### Struct vs Class
 
-![](cpp_notes_images/137_chained_call_reference.png)
+`struct` is another way to define classes.
 
-Here ‘const’ is important to include.
+**Key difference:**
 
-What happen in line: 33
+| Feature | `struct` | `class` |
+|--------|---------|--------|
+| Default access | `public` | `private` |
 
-![](cpp_notes_images/138_chained_call_line33.png)
+![Struct vs Class](cpp_notes_images/cpp_notes_image_067.png)
 
+> Both are almost the same in C++. Use `struct` when you have predominantly public members.
 
-### ⚖️ Struct Vs Classes: Struct is another way to  define classes. Differences:
+---
 
+### Size of Class Objects
 
-![](cpp_notes_images/139_struct_vs_class_differences.png)
+The size of a class object depends on its **member variables**, not on functions.
 
-![](cpp_notes_images/140_struct_vs_class_table.png)
+```cpp
+string s = ""; // size is 32 bytes regardless of content
+```
 
-So We can use struct when we have public members. But both are almost same. We can use anyone.
+The `string` object itself has a fixed size (internal pointers, metadata: length, capacity, etc.). Actual character data for large strings is stored in separate heap memory.
 
+**Alignment rule:**
 
-### 📏 Size of the class objects: Size of the class objects depends on the member of the class, not functions.
+```cpp
+// Object should be 44 bytes, but actual size is 48 bytes
+// Reason: total object size must be a multiple of the largest alignment (here: 8 bytes)
+// 4-byte padding is added after the 4-byte int member
+```
 
+![Class object size](cpp_notes_images/cpp_notes_image_068.png)
 
-![](cpp_notes_images/141_class_object_size_string.png)
+![Memory layout alignment](cpp_notes_images/cpp_notes_image_069.png)
 
-Here, string size is 32 byte whether I put no character or put millions of character. It will remain same.  We are not getting memory which occupy by characters, but getting the fixed size of the string object itself in the memory. It includes internal pointers, metadata(like length, capacity) and other housekeeping data.
+> **Offset:** the byte position of a member inside an object, measured from the object start.
 
-![](cpp_notes_images/142_string_dynamic_heap_storage.png)
+**For functions:**
 
-![](cpp_notes_images/143_string_sso_small_string.png)
+![Functions in class](cpp_notes_images/cpp_notes_image_070.png)
 
-![](cpp_notes_images/144_string_size_explanation.png)
+---
 
-Object size:
+## Inheritance
 
-![](cpp_notes_images/145_object_size_example.png)
+### Inheritance Basics
 
-Here object size should be 44 byte. But Actual size is 48. cause, Alignment rule
+**Inheritance** allows a derived class to inherit properties and behaviours from a base class, promoting code reuse and creating a hierarchical relationship.
 
-![](cpp_notes_images/146_object_alignment_rule.png)
+```cpp
+class Player : public Human {
+    // Player inherits all public members of Human
+};
+```
 
-The total object size must be a multiple of the largest alignment (here: 8 bytes)
+When a class inherits another, it gets all **accessible** members of the parent class, and can override or add new functionality.
 
-so there will 4 byte padding after 4 byte integer memory. See memory layout: below
+![Inheritance basic](cpp_notes_images/cpp_notes_image_071.png)
 
-![](cpp_notes_images/147_object_padding_layout.png)
+---
 
-Here Offset is the byte position of a member inside an object, measured from the object start.
+### Access Specifiers & Protected Members
 
-For functions:
+![Access specifiers](cpp_notes_images/cpp_notes_image_072.png)
 
-![](cpp_notes_images/148_functions_no_size_contribution.png)
+In the example: `player` class inherits all public members of `human`, but cannot access private ones. Only `age` can be printed; passing strings via the `player` constructor is unused without setters/getters.
 
+**Protected members:** accessible from the derived class but **inaccessible** from outside.
 
-## 🧬 Inheritance: Inheritance in C++ is a mechanism that allows a new class (derived class) to inherit properties and behaviours (methods) from an existing class (base class), promoting code reuse and creating a hierarchical relationship between classes.
+![Protected member](cpp_notes_images/cpp_notes_image_073.png)
 
+---
 
-When a class inherits another class, it gets all the accessible members of the parent class, and the child class can also redefine (override) or add new functionality to them.
+### Base Class Access Specifier
 
-![](cpp_notes_images/149_inheritance_example.png)
+```cpp
+class Player : public Human  // 'public' is the base class access specifier
+```
 
- Public, private, protected are access specifier.
+This determines how accessible base class members are to the derived class.
 
-![](cpp_notes_images/150_inheritance_access_specifiers.png)
+**Public Inheritance:**
+1. `public` in base → remains `public` in derived
+2. `protected` in base → remains `protected` in derived
+3. `private` members are **never inherited** — derived class cannot access
 
-in the above example, player class inherits all public members of human. But can’t access private. That’s why we only can print ‘age’ variable. Also passing string through player object(”motaher”, “emon”) constructor will be unused. We have to use public setter & getter.
+![Inheritance access table](cpp_notes_images/cpp_notes_image_074.png)
 
-> ***Protected member: Sometime we may want that members of base class has to be accessible from derived class but still be inaccessible from outside. In that case use those member as protected member. Below:
+**Multi-level Example:**
 
-![](cpp_notes_images/151_inheritance_protected_member.png)
+Here `Engineer` is derived from `Person` privately. `CivilEngr` inherits from `Engineer`. So `CivilEngr` cannot access `Person`'s members (they're private to `Engineer`).
 
-> ***Base class access specifier:
+But C++ allows re-exposing with `using`:
 
-![](cpp_notes_images/152_inheritance_base_access_specifier.png)
+```cpp
+class CivilEngr : public Engineer {
+public:
+    using Engineer::m_1; // re-exposes m_1
+    using Engineer::m_2;
+};
+```
 
-Here” Public” is base class access specifier. This is public inheritance. This can be private/protected.
+![Multi-level inheritance](cpp_notes_images/cpp_notes_image_075.png)
 
-This tell how accessible the base class members to derived class.
+![using keyword in inheritance](cpp_notes_images/cpp_notes_image_076.png)
 
-![](cpp_notes_images/153_inheritance_accessibility_table.png)
+`using` brings the member into the current class scope — **re-exposes** it.
 
+![using protected member](cpp_notes_images/cpp_notes_image_077.png)
 
-#### Public Inheritance:
+---
 
+### Default Arc Constructor with Inheritance
 
-1. Anything public in base class, will remain public in derived class.
+Always provide a **default constructor** for classes used in inheritance hierarchies. The compiler will call all default constructors up the chain.
 
-2. Anything protected in base class, will remain protected in derived class.
+```cpp
+// If Person class has no default constructor and CivilEngr is built → compiler error
+```
 
-3. Private members are never inherited. Derived class can’t access.
+> Compiler goes to the base class first, then each layer up the hierarchy, calling all constructors.
 
-Others(private, protected) we can derived from our assumption.
+![Default constructor inheritance](cpp_notes_images/cpp_notes_image_078.png)
 
-![](cpp_notes_images/154_inheritance_public_rules.png)
+---
 
-![](cpp_notes_images/155_inheritance_private_protected.png)
+### Initializer List
 
-![](cpp_notes_images/156_inheritance_access_summary.png)
+An initializer list gives a variable/object its **first valid value at the moment it is created**.
 
+```cpp
+MyClass(int x) : member(x) { }
+```
+
+![Initializer list](cpp_notes_images/cpp_notes_image_079.png)
+
+![Initializer list vs assignment](cpp_notes_images/cpp_notes_image_080.png)
+
+**Initializer List vs Assignment:**
+
+![IL vs Assignment detail](cpp_notes_images/cpp_notes_image_081.png)
+
+---
+
+### Custom Constructor with Inheritance
+
+Sometimes a custom (parameterized) constructor needs to be called instead of the default.
+
+```cpp
+Car(string vname, double weight, string brName, int drnumber)
+    : Vehicle(vname, weight, brName), doorNumber(drnumber) { }
+```
+
+- `:Vehicle(...)` — calls the base class `Vehicle` constructor to initialize inherited members.
+- `doorNumber(drnumber)` — initializes `Car`'s own member.
+
+![Custom constructor inheritance](cpp_notes_images/cpp_notes_image_082.png)
+
+---
+
+### Copy Constructors with Inheritance
+
+A **copy constructor** initializes a new object using an existing object of the same class. It takes a `const` reference to the source object.
+
+```cpp
+human manus1(manus); // new object initialized from existing object
+```
+
+```cpp
+human(const human& source); // copy constructor declaration
+```
+
+**Flow for the code:**
+1. `player "manus"` object is created.
+2. Player copy constructor called for `"manus1"`, passing `"manus"` as const reference.
+3. `human(source)` is executed.
+4. Human copy constructor receives `"manus"` reference, copies its members to initialize `"manus1"`'s human portion.
+5. Back to player copy constructor — copies player-specific members for `"manus1"`.
+
+![Copy constructor](cpp_notes_images/cpp_notes_image_083.png)
+
+![Copy constructor flow](cpp_notes_images/cpp_notes_image_084.png)
+
+**When do we need a copy constructor?**
+
+![When to use copy constructor](cpp_notes_images/cpp_notes_image_085.png)
+
+---
+
+> ### 🔑 Core Rule (very important)
+>
+> **"Copy constructor is NOT for normal use — it is for creating a new independent object with the same state when the program explicitly needs duplication."**
+
+---
+
+### Inheriting Base Constructor
+
+![Inheriting base constructor](cpp_notes_images/cpp_notes_image_086.png)
+
+---
+
+## 📚 Resources
+
+| Resource | Link |
+|----------|------|
+| FreeCodeCamp C++ Full Course | [YouTube](https://www.youtube.com/watch?v=8jLOx1hD3_o) |
+| cppreference.com | [cppreference.com](https://en.cppreference.com) |
+| IEEE 754 Explained | [YouTube](https://www.youtube.com/watch?v=8afbTaA-gOQ&t=181s) |
+| Numeric Limits | [cppreference](https://en.cppreference.com/w/cpp/types/numeric_limits) |
+| cmath reference | [cppreference](https://en.cppreference.com/w/cpp/header/cmath) |
+| IO Manipulators | [cppreference](https://en.cppreference.com/w/cpp/io/manip) |
+| Template insights | [cppinsights.io](https://cppinsights.io) |
+| Anisul Islam — Exception Handling | [YouTube](https://www.youtube.com/watch?v=uoCuMTzD9AE&list=PLgH5QX0i9K3q0ZKeXtF--CZ0PdH1sSbYL&index=90) |
+
+---
+
+*Notes taken by [ChemistCoder90](https://github.com/ChemistCoder90) — MSc Chemistry, SUST*
