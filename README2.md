@@ -88,7 +88,7 @@ input For Space separated word
 
  
 
-***Precision includes digits before decimal point(.). 12547.325-> 12547 included in the precision.
+**Precision includes digits before decimal point(.). 12547.325-> 12547 included in the precision.
 
 For Float: 12345.6789-> 89will be garbage value. Cause precision 7 for Float. May print like: 12345.6725
 
@@ -166,11 +166,11 @@ will print true, false.
 
 **Manipulator:    https://en.cppreference.com/w/cpp/io/manip   //for more**
 
-**std:flush: **when we print something, it does not go directly to the terminal. It store somewhere called “buffer”. When buffer is full/ complete it goes to terminal. If use std:flush data directly goes to console/terminal instead of goes to buffer.
+* **std:flush: **when we print something, it does not go directly to the terminal. It store somewhere called “buffer”. When buffer is full/ complete it goes to terminal. If use std:flush data directly goes to console/terminal instead of goes to buffer.
 
 ![image-012.png](images/image-012.png)
 
-*************setw() :** set width
+*******setw() :** set width
 
 ```cpp
 cout<<right; // printf from right. 	Left for left alignment
@@ -275,7 +275,7 @@ As you know, the first item of an enum has the value 0. The second has the value
 
 ![image-022.png](images/image-022.png)
 
-***Note that if you assign a value to one specific item, the next items will update their numbers accordingly:
+Note that if you assign a value to one specific item, the next items will update their numbers accordingly:
 
 ![image-023.png](images/image-023.png)
 
@@ -418,7 +418,7 @@ Use ‘delete’ to return memory to the  operating system. After return reset p
 
 ---
 
-**Dangling Pointer:** A pointer that doesn’t point to a valid memory address. Trying to dereferencing and using a dangling pointer  will results in undefined behaviour. 
+***Dangling Pointer:** A pointer that doesn’t point to a valid memory address. Trying to dereferencing and using a dangling pointer  will results in undefined behaviour. 
 
 How dangling pointer create:
 
@@ -488,7 +488,7 @@ Or,
  
 Pointer address implicitly converted into boolean. (null==0).
 
-> After use delete set pointer to nullptr for safety.
+* After use delete set pointer to nullptr for safety.
 
 ---
 
@@ -565,7 +565,7 @@ int& ref = x;
 
 If we change reference value or variable value, both contribute same changes.
 
-*********** “&ref” and “&s” both has same memory address.
+****** “&ref” and “&s” both has same memory address.
 
 ![image-051.png](images/image-051.png)
 
@@ -1623,7 +1623,7 @@ In this case, we can define the behaviour of the + operator to work with objec
 
 This concept of defining operators to work with objects and structure variables is known as **operator overloading**.
 
-***************Note: ****Most operators in C++ can be overloaded, but operators such as “::”,  “ . ”,  “.*”,   “?:” and sizeof cannot be overloaded because they are essential to the core functionality of the language.
+****Note: ****Most operators in C++ can be overloaded, but operators such as “::”,  “ . ”,  “.*”,   “?:” and sizeof cannot be overloaded because they are essential to the core functionality of the language.
 
 **Syntax:**
 
@@ -2087,7 +2087,7 @@ Also This way: below
 ![image-239.png](images/image-239.png)
 
  
-> Abstract class can have both constructor and destructor.
+* Abstract class can have both constructor and destructor.
 
 Why need abstract class and pure virtual function?
 
