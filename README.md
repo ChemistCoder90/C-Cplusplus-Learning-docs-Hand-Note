@@ -48,7 +48,7 @@
 
 ---
 
-“C++: 31 hours long video of freecodecamp”
+**“C++: 31 hours long video of freecodecamp”**
 
 ***Didn’t add basics Like: if,else; Loop,Function, Switch etc.
 
@@ -74,15 +74,15 @@ input For Space separated word
 ![image-002.png](images/image-002.png)
 
    
-Variable: A piece of memory that used to store specific type of data.
+**Variable:** A piece of memory that used to store specific type of data.
 
-Number System representation:
+**Number System representation:**
 
 ![image-003.png](images/image-003.png)
 
-*** Modifier like signed, unsigned used integral data type as decimal number/ whole number. Can’t use for float, double(2.0, 2.5).
+> Modifier like signed, unsigned used integral data type as decimal number/ whole number. Can’t use for float, double(2.0, 2.5).
 
-Float and Double:
+**Float and Double:**
 
 ![image-004.png](images/image-004.png)
 
@@ -92,7 +92,7 @@ Float and Double:
 
 For Float: 12345.6789-> 89will be garbage value. Cause precision 7 for Float. May print like: 12345.6725
 
-** float a=123456789-> 89 will b garbage value. May print like: 12345.6745
+> float a=123456789-> 89 will b garbage value. May print like: 12345.6745
 
 ![image-005.png](images/image-005.png)
 
@@ -113,13 +113,13 @@ cout<<setprecision(20);
 
 If we not set precision, the default precision will be 6 digits.(Total digits. Not after decimal point)
 
-if we use “fixed” the with set precision(4), precision will be 4 after decimal point. Above a=12.1234;(ans)
+if we use **“fixed” **the with set precision(4), precision will be 4 after decimal point. Above a=12.1234;(ans)
 
 But not using “fixed” precision will be 4 for total digits. Above a=12.12;(ans)
 
-used for set precision. Library> #include<iomanip>
+used for set precision. Library> `#include<iomanip>`
 
-suffixes(like f, L): u // unsigned
+**suffixes(like f, L):** u // unsigned
 
 ul // unsigned long
 
@@ -127,12 +127,16 @@ ll // long long
 
 ---
 
-**Booleans occupy 1byte/8bits in memory.
+****Booleans** occupy **1byte/8bits** in memory.
 
 ```cpp
 bool x=true; // or bool x=1;
 bool y=false; // or bool y=0;
-cout<<boolalpha; //used for printf true/false instead of 0/1
+```
+
+**cout<<boolalpha;** **//used for printf true/false ****instead of 0/1**
+
+```cpp
 cout<<x<<” ”<<y;
 ```
 
@@ -140,7 +144,7 @@ will print true, false.
 
 ---
 
-Character:
+**Character:**
 
 ![image-009.png](images/image-009.png)
 
@@ -152,7 +156,7 @@ Character:
 
 ---
 
-** 31/10 means how many times 10 is gonna fit in 31. so ans is 3.
+> 31/10 means how many times 10 is gonna fit in 31. so ans is 3.
 
 * Relation Operator: > ,< , >=, <=
 
@@ -160,13 +164,13 @@ Character:
 
 ---
 
-Manipulator:    https://en.cppreference.com/w/cpp/io/manip   //for more
+**Manipulator:    https://en.cppreference.com/w/cpp/io/manip   //for more**
 
-* std:flush: when we print something, it does not go directly to the terminal. It store somewhere called “buffer”. When buffer is full/ complete it goes to terminal. If use std:flush data directly goes to console/terminal instead of goes to buffer.
+* **std:flush: **when we print something, it does not go directly to the terminal. It store somewhere called “buffer”. When buffer is full/ complete it goes to terminal. If use std:flush data directly goes to console/terminal instead of goes to buffer.
 
 ![image-012.png](images/image-012.png)
 
-*setw() : set width
+*******setw() :** set width
 
 ```cpp
 cout<<right; // printf from right. 	Left for left alignment
@@ -184,7 +188,7 @@ cout<<setfill(‘-’) // blank space fill with ‘-’
 
 *for finding max min numeric number limits data type can hold.
 
-Need this> #include<limits> 
+Need this> `#include<limits>` 
 
 https://en.cppreference.com/w/cpp/types/numeric_limits
 
@@ -195,8 +199,10 @@ https://en.cppreference.com/w/cpp/types/numeric_limits
 ---
 
 ```cpp
-#include<cmath> : abs(), pow(),  ceil(), log(), sqrt(), sin(), tan() etc https://en.cppreference.com/w/cpp/header/cmath
+#include<cmath> : abs(), pow(),  ceil(), log(), sqrt(), sin(), tan() etc
 ```
+
+ https://en.cppreference.com/w/cpp/header/cmath 
 
 for log(): log(10) means loge(10). So have to fix the base as log10(10). E=2.71..
 
@@ -213,29 +219,31 @@ if we take data type less than 4 byte and perform arithmatic operation compiler 
 
 flow control: if else, switch, ternary operator.
 
-*Switch: if we not use “Break”, the case which match, after that all case will execute and print every case value.
+***Switch: if we not use “Break”, the case which match, after that all case will execute and print every case value.**
 
-* we can use int, char , double, enum etc but not string as case.
+*** we can use int, char , double, enum etc but not string as case.**
 
 ---
 
 * If we use “const” before array. We cant modify array elements.
 
-* a[ ]={2,3,7,5,2,3}; size(a) return the size of array. /Or sizeof(a)/sizeof(a[0]);
+*** a[ ]={2,3,7,5,2,3}; size(a) return the size of array. /Or sizeof(a)/sizeof(a[0]);**
 
 ---
 
-Static Variable: A static variable initialize only once and retains its value between function calls / across different scopes, instead of being destroyed and recreated each time.
+**Static Variable****: **A static variable initialize only once and retains its value between function calls / across different scopes, instead of being destroyed and recreated each time.
 
 ![image-017.png](images/image-017.png)
 
-- is created only once
+- is created **only once**
 
-- exists for the entire lifetime of the program
+- exists for the **entire lifetime of the program**
 
-- is not destroyed when it goes out of scope
+- is **not destroyed** when it goes out of scope
 
-Static Global Variable: As we know global variables are accessible from other .cpp file. In case of static global declaration, the variable is only visible within that translation unit (source file), not to other .cpp files.
+---
+
+**Static Global Variable: **As we know global variables are accessible from other .cpp file. In case of static global declaration, the variable is only visible within that translation unit (source file), not to other .cpp files.
 
 ![image-018.png](images/image-018.png)
 
@@ -243,7 +251,7 @@ Static Global Variable: As we know global variables are accessible from other .c
 
 ---
 
-Enum: An enum is a special type that represents a group of constants (unchangeable values).
+**Enum: **An ****enum**** is a special type that represents a group of constants (unchangeable values).
 
 To create an enum, use the enum keyword, followed by the name of the enum, and separate the enum items with a comma.
 
@@ -253,11 +261,11 @@ Enum is short for "enumerations", which means "specifically listed".
 
 To access the enum, you must create a variable of it.
 
-Inside the main() method, specify the enum keyword, followed by the name of the enum (Level) and then the name of the enum variable (myVar in this example):
+**Inside the main() method, specify the enum keyword, followed by the name of the enum (Level) and then the name of the enum variable (myVar in this example):**
 
 ![image-020.png](images/image-020.png)
 
-By default, the first item (LOW) has the value 0, the second (MEDIUM) has the value 1, etc.
+**By default, the first item (LOW) has the value 0, the second (MEDIUM) has the value 1, etc.**
 
 If you now try to print myVar, it will output 1, which represents MEDIUM:
 
@@ -271,7 +279,7 @@ Note that if you assign a value to one specific item, the next items will update
 
 ![image-023.png](images/image-023.png)
 
-Example:
+**Example:**
 
 ![image-024.png](images/image-024.png)
 
@@ -281,51 +289,52 @@ Enums are used to give names to constants, which makes the code easier to read a
 
 ---
 
-Pointer
+**Pointer**
 
 Pointer is special kind of variable.
 
 ```cpp
 int* int_num{}; or int* int_num; // will point to a integer type variable //initialise with null 					     // pointer(nulptr)
 double* frac_num{}; // will point to a double type variable
-int * int_num{}; // this initialisation with {} is going to initialise with special address means it is not 			//pointing any variable. Means initialize  with nullptr
+int * int_num{}; // this initialisation with {} is going to initialise with special address means it is not 			//pointing any variable. Means initialize  with **nullptr**
 int * int_num{nullptr}; // this pointer not pointer anywhere
 ```
 
-** pointer of int, double, char etc all are same size. Cause they only store address.
+> pointer of int, double, char etc all are same size. Cause they only store address.
 
-Char *ptr{“Hello world”}; // Pointer will point to 1st character. Some compiler will not compile(MSVC). GCC will give warning and compile. A whole string is assigning to char type pointer. See:10:17:00
+**Char *ptr{“Hello world”}; **// Pointer will point to 1st character. Some compiler will not compile(MSVC). GCC will give warning and compile. A whole string is assigning to char type pointer. **See:10:17:00**
 
 Cout<<ptr; // will print whole string.
 
+```cpp
 Cout<<*ptr;// print 1st character ‘H’;
+```
 
 *ptr=’B’;// this may give error. Cause compiler will think it as const char array.
 
- If want to modify. Don’t use character pointer, use array like: char msg[10]==”Hello world”;
+ If want to modify. Don’t use character pointer, use array like: **char msg[10]==”Hello world”;**
 
-or use const char *ptr{“Hello world”};  // no warning. Can’t modify also.
+or use **const char *ptr{“Hello world”};**  // no warning. Can’t modify also.
 
-Dereferencing pointer: reading something(value) on the address of the pointer. Cout<<*ptr;
+**Dereferencing pointer: reading something(value) on the address of the pointer. Cout<<*ptr;**
 
 ```cpp
 string with pointer: char* p_msg= “Hello World!”; // the pointer will point to the 1st character of string
 ```
 
-*this will compile with warning. Use const char* p_msg= “Hello World!”;
+***this will compile with warning. Use const char* p_msg= “Hello World!”;**
 
-printf p_msg will print whole string. But using dereferencing will print 1st character(*p_msg).
+**printf p_msg will print whole string. But using dereferencing will print 1st character(*p_msg).**
 
-*** without const it gives warning/refuse to compile cause compiler is going to convert string into char array of constant char. What we are using is points to that is not a const char pointer. So pointer here might be used to try or modify data. That’s why it refuse unless using const. 
+> without const it gives warning/refuse to compile cause compiler is going to convert string into char array of constant char. What we are using is points to that is not a const char pointer. So pointer here might be used to try or modify data. That’s why it refuse unless using const.
 
 Check at 10:17min
 
 ```cpp
 int *ptr;// contain junk address
 int a=12;
-```
-
 *ptr=&a;
+```
 
 uninitialized pointer contain junk address. Assigning a value to it(*ptr=12)May cause error. Could be point to a memory which is used by OS. May cause disaster. 
 
@@ -335,7 +344,7 @@ Use this: int a; int *ptr=&a;
 
  
 
-Memory Map
+**Memory Map**
 
 When we run a program it runs on RAM. Various program of OS or other is running on memory.
 
@@ -370,30 +379,32 @@ If we run few program, they are going to go through MMU and MMU is going assign 
 
 ![image-030.png](images/image-030.png)
 
-* STACK: Local variable stores on stack section.
+* **STACK: **Local variable stores on stack section.
 
 	* print, statement, function calls others store on stack section.
 
-* TEXT:Actual binary load on Text so that CPU can execute it.
+* **TEXT:**Actual binary load on Text so that CPU can execute it.
 
-* HEAP:Additional memory when we run out of stack memory also to  make things better for program, Used for run time.
+* **HEAP:**Additional memory when we run out of stack memory also to  make things better for program, Used for run time.
 
-Dynamic Memory Allocation
+---
+
+**Dynamic Memory Allocation**
 
 ![image-031.png](images/image-031.png)
 
  
-2nd point- full Control:  when declare a variable a=23; in stack it remove when scope is over. Developer doesn’t have full control. But in heap developer have full control when a variable comes to work and dies.
+**2nd point- full Control:  when declare a variable a=23; in stack it remove when scope is over. Developer doesn’t have full control. But in heap developer have full control when a variable comes to work and dies.**
 
->> 10:41 min
+**>> 10:41 min**
 
 ![image-032.png](images/image-032.png)
 
   
 
-*set up a pointer which point to heap memory.
+***set up a pointer which point to heap memory.**
 
-After initializing a pointer with nullptr. When p_number4=new int execute the OS is allocate a memory on heap. Variables are usually stores on stack section. It removes when variable containing scope will over. But if we allocate a memory on heap by “p_number4=new int;” . This memory will live though its scope is over. It will stay until return it to operating system. To return:
+**After initializing a pointer with nullptr. When p_number4=new int execute the OS is allocate a memory on heap. Variables are usually stores on stack section. It removes when variable containing scope will over. But if we allocate a memory on heap by “p_number4=new int;” . This memory will live though its scope is over. It will stay until return it to operating system. To return:**
 
 ![image-033.png](images/image-033.png)
 
@@ -403,9 +414,11 @@ Use ‘delete’ to return memory to the  operating system. After return reset p
 
 * Using ‘delete’ remove the allocated heap memory which is pointed. Not the pointer. If pointing to ‘nullptr’, delete will do nothing.
 
-*** Always remember to release memory.
+> Always remember to release memory.
 
-*Dangling Pointer: A pointer that doesn’t point to a valid memory address. Trying to dereferencing and using a dangling pointer  will results in undefined behaviour. 
+---
+
+***Dangling Pointer:** A pointer that doesn’t point to a valid memory address. Trying to dereferencing and using a dangling pointer  will results in undefined behaviour. 
 
 How dangling pointer create:
 
@@ -423,11 +436,13 @@ Solution:
 
 3. For multiple pointer point to same address, make sure master pointer is clear/ reset.
 
-*** Always check if pointer is nullptr or not by if-else.
+> Always check if pointer is nullptr or not by if-else.
 
-‘New’ fails:
+---
 
-When allocating an array with pointer with huge size(1000000000000000000). It may fails and program can crash. We can use exception mechanism or ‘nothrow’ to prevent crashing.
+**‘New’ fails:**
+
+When allocating an array with pointer with huge size(1000000000000000000). It may fails and program can crash. We can use **exception mechanism or ‘nothrow’** to prevent crashing.
 
 ![image-034.png](images/image-034.png)
 
@@ -435,15 +450,15 @@ When allocating an array with pointer with huge size(1000000000000000000). It ma
 
 Both allocation (with for loop or without) fail.
 
-* Solve with ‘exception mechanism’:
+*** Solve with ‘exception mechanism’:**
 
 ![image-035.png](images/image-035.png)
 
  
 
-With ‘exception’ we can catch the problem. What is called ‘handle’ in the problem. Suppose we are going to set up color and color fails. UI(interface) may show black and white. But program will keep running “what()”  function will show the error.
+With ‘exception’ we can catch the problem. What is called ‘handle’ in the problem. Suppose we are going to set up color and color fails. UI(interface) may show black and white. But program will keep running **“****what()****” ** function will show the error.
 
-*with ‘nothrow’: If “new” fails, we are going to get “nullptr” stored.
+***with ‘nothrow’: **If “new” fails, we are going to get “nullptr” stored.
 
 ![image-036.png](images/image-036.png)
 
@@ -453,7 +468,9 @@ For clear understanding see
 
 https://www.youtube.com/watch?v=uoCuMTzD9AE&list=PLgH5QX0i9K3q0ZKeXtF--CZ0PdH1sSbYL&index=90 // anisul islam lecture 92. Exception handling
 
-NULL pointer safety:
+---
+
+**NULL pointer safety:**
 
 ![image-037.png](images/image-037.png)
 
@@ -475,7 +492,7 @@ Pointer address implicitly converted into boolean. (null==0).
 
 ---
 
-Memory Leaks:
+**Memory Leaks:**
 
 ![image-040.png](images/image-040.png)
 
@@ -497,7 +514,9 @@ After local scope is over, pointer is gonna die, but allocated memory will remai
 
 These memory leaks may causes program crash.
 
-Dynamic array: Array stores on the heap.
+---
+
+**Dynamic array: Array stores on the heap.**
 
 ![image-043.png](images/image-043.png)
 
@@ -529,7 +548,9 @@ Explanation:
 
  
 
-Reference: A reference is an alias (another name) for an existing variable. It does not create a new variable or occupy memory, it just gives another way to access the same memory. Doesn’t hold addresses as pointer.
+---
+
+**Reference: **A **reference** is an **alias** (another name) for an existing variable. It **does not create a new variable or ****occupy ****memory**, it just gives another way to access the same memory. Doesn’t hold addresses as pointer.
 
  
 
@@ -544,7 +565,7 @@ int& ref = x;
 
 If we change reference value or variable value, both contribute same changes.
 
-** “&ref” and “&s” both has same memory address.
+****** “&ref” and “&s” both has same memory address.
 
 ![image-051.png](images/image-051.png)
 
@@ -562,7 +583,7 @@ Reassign a Pointer  to others variable, but reference can’t.
 
 Here ‘S and ref’ value will changes to 12.
 
-Use case: *if want to modify original variable inside a function. This save memories.
+**Use case: *if want to modify original variable inside a function. This save memories.**
 
 ![image-054.png](images/image-054.png)
 
@@ -588,9 +609,9 @@ Value will changes to 12.
 
 ---
 
-*** size(), sizeof() function return the size. But for character array it includes ‘null’ . But for string  size() don’t count null.
+> size(), sizeof() function return the size. But for character array it includes ‘null’ . But for string  size() don’t count null.
 
-*** strlen() is used for character array. Not for string.
+> strlen() is used for character array. Not for string.
 
 ```cpp
 		char *a=”asdf”;     // this is string literal. Not modifiable.
@@ -600,9 +621,11 @@ Value will changes to 12.
 
 Using “const” is safe in string literal.
 
-***String literal is actually a character array. When we assign it to “const char * ”, it automatically converts into a pointer to 1st element. String has not fixed amount of memory, cause it internally implemented as a class and it stores its data as const char pointer.
+***String literal is actually a character array. When we assign it to “const char * ”, it automatically converts into a pointer to 1st element. String has not fixed amount of memory, cause it internally implemented as a class and it stores its data as **const char pointer.**
 
+```cpp
 		Const char *msg=”Hello I am here.”;
+```
 
 ![image-058.png](images/image-058.png)
 
@@ -612,13 +635,14 @@ Character array lives on read only memory. Can’t modify.
 
 swap 2 number.
 
+```cpp
 1. a=a+b;     b=a-b;    a=a-b;
-
 2. a=a^b;      b=a^b;   a=a^b;
+```
 
 ---
 
-Returning from function as Reference: Usually function returns values(int, char etc). But sometime compilers are smart enough that that return reference instead of values. Avoid copies. See below
+**Returning from function as Reference: Usually function returns values(int, char etc). But sometime compilers are smart enough that that return reference instead of values. Avoid copies. See below**
 
 ![image-059.png](images/image-059.png)
 
@@ -636,9 +660,9 @@ Here both addresses are same. Its returns the reference. Using reference mechani
 
 ---
 
-Function Overloading
+**Function Overloading**
 
-Function Overloading: Means we can declare multiple function with same name in the same scope, but with different parameter lists. Like parameter type(int, double, float).
+**Function Overloading: Means we can declare multiple function with same name in the same scope, but with different parameter lists. Like parameter type(int, double, float).**
 
 Below All allowed.
 
@@ -662,11 +686,11 @@ Not allowed.(below)
 
 ![image-067.png](images/image-067.png)
 
-When ‘int’ type variable is passed as argument “int overload will called”. Same as double and others.
+When **‘int’** type variable is passed as argument “int overload will called”. Same as double and others.
 
 ---
 
-lambda Function:
+**lambda Function:**
 
 ![image-068.png](images/image-068.png)
 
@@ -684,7 +708,7 @@ lambda Function:
 
 ![image-071.png](images/image-071.png)
 
-  
+   
 
 ![image-072.png](images/image-072.png)
 
@@ -692,7 +716,9 @@ lambda Function:
 
 Here  if lambda function return something, it going to assign to variable ‘fun’.
 
-Capture lists on lambda function: Capture list is a part of lambda function inside the square brackets which tells the lambda function, which variable from the surrounding scope it can use and how(like using a copy of a variable or references).
+---
+
+**Capture lists on lambda function: Capture list is a part of lambda function inside the square brackets which tells the lambda function, which variable from the surrounding scope it can use and how(like using a copy of a variable or references).**
 
 * When a lambda function capture values, it made a copy of that variable on the memory. So if that variable is changed later it will not effect on that lambda function. Lambda function retain the old value unless we use variable as reference. See below…
 
@@ -714,17 +740,17 @@ If we print the addresses, we can clearly see that both(variable a, and lambda f
 
 ---
 
-*** ”[=]” using this as capture list it will grab all variable from the surrounding scope. (To capture value)
+> ”[=]” using this as capture list it will grab all variable from the surrounding scope. (To capture value)
 
-*** ”[#]” using this as capture list it will grab all variable from the surrounding scope. (To capture as 	       	references)
+> ”[#]” using this as capture list it will grab all variable from the surrounding scope. (To capture as 	       	references)
 
-*** using reference, all have same addresses.
+> using reference, all have same addresses.
 
 ---
 
-Function Template:
+**Function Template:**
 
-Function Template by value: Function Template is a mechanism in c++ to set up a blueprint for functions, But compiler going generate the actual code when it sees the function called. Means to avoid code repetition.
+**Function Template by value: Function Template is a mechanism in c++ to set up a blueprint for functions, But compiler going generate the actual code when it sees the function called. Means to avoid code repetition.**
 
 ![image-077.png](images/image-077.png)
 
@@ -732,9 +758,9 @@ Here there are multiple function overload. They are doing the work. To minimise 
 
 ![image-078.png](images/image-078.png)
 
-  “ T ” is a place holder for the data type function is going to receive as argument. But all argument data type have to be same(there  is a room for not same data type). When compiler see, template function called. It going to look at the data type of arguments which are passing to function. Then compiler generate same function with that data type only when the function is called .
+  “ T ” is a place holder for the data type function is going to receive as argument. But all argument data type **have to be same****(there  is a room for not same data type)**. When compiler see, template function called. It going to look at the data type of arguments which are passing to function. Then compiler generate same function with that data type only when the function is called .
 
-** can also pass string by argument.
+> can also pass string by argument.
 
 Function templates are not c++ code. It just a function blueprint.
 
@@ -742,7 +768,7 @@ Function templates are not c++ code. It just a function blueprint.
 
 If data types are not same passing as argument, we can  explicitly set the type with<double>. This basically tells the compiler to generate double/int etc. template instance function for this calling. And implicitly convert other type to determined type. In below example ”a” variable int type and will convert to double.
 
-** We can see this internal conversion of function template on cppinsights.io.
+> We can see this internal conversion of function template on **cppinsights.io.**
 
 ![image-080.png](images/image-080.png)
 
@@ -752,7 +778,9 @@ This will give no error. Cause we explicitly tell to generate a double type temp
 
 If we use sizeof() to see size of the “re” variable. We can see is it double, int etc.
 
-Template type parameter by references: Recall references procedure, template procedure. All same concept.
+---
+
+**Template ****type parameter by references: **Recall references procedure, template procedure. All same concept.
 
 ![image-081.png](images/image-081.png)
 
@@ -765,7 +793,7 @@ Template type parameter by references: Recall references procedure, template pro
 
 ---
 
- Template Specialization: This is specially for “const char pointer” like: 
+ **Template Specialization: **This is specially for “const char pointer” like: 
 
 ```cpp
 	const char* x=”asdf”;
@@ -797,9 +825,11 @@ In order to use template specialization we have to declare primary template like
 
  
 
-C++ 20:
+---
 
-Concept: Concept is a mechanism to set up constrain or restriction on template parameter of  our function template. For example we can set that function to be called only integer and we call it something which isn’t ans integer, it will give a compiler error.
+**C++ 20:**
+
+**Concept: Concept is a mechanism to set up constrain or restriction on template parameter of  our function template. For example we can set that function to be called only integer and we call it something which isn’t ans integer, it will give a compiler error.**
 
 ![image-088.png](images/image-088.png)
 
@@ -819,13 +849,13 @@ Concepts are introduced in c++20. Before that we can use this(below) inside func
 
   
 
-Type Traits: Intro on C++11. A type trait is a small template “tool” that tells you something about a type, or transforms a type, at compile time. On above we are checking “T” is an integral or not by “is_integral<>”. Boolean value. Also Use this as requires. See below
+**Type Traits: Intro on C++11. A type trait is a small template “tool” that tells you something about a type, or transforms a type, at compile time. On above we are checking “T” is an integral or not by “is_integral<>”. Boolean value. Also Use this as requires. See below**
 
 ![image-091.png](images/image-091.png)
 
  
 
-We can use type traits on requires.
+We can use type traits on **requires**.
 
 ![image-092.png](images/image-092.png)
 
@@ -869,7 +899,7 @@ Think of type traits as little “questions” or “tools” about types:
 
 ![image-098.png](images/image-098.png)
 
-Here the compiler removes the unused branch at compile time → no runtime cost.
+**Here the compiler removes the unused branch at compile time → no runtime cost.**
 
 Here without “constrxpr” if is checked at run time. So both branch(if, else) must compile because compiler doesn’t know which condition will be true.
 
@@ -882,16 +912,16 @@ But with “constexpr”
 ![image-099.png](images/image-099.png)
 
  
-*** Think f(42)=print(42)  
+> Think f(42)=print(42)
 
-Generated machine code for print(42) contains no trace of the "not integral" branch.
-Generated machine code for print(3.14) contains no trace of the "integral" branch.
+Generated machine code for print(42) contains **no trace** of the "not integral" branch.
+Generated machine code for print(3.14) contains **no trace** of the "integral" branch.
 
 The compiler erases the irrelevant branch at compile time.
 
-Constexpr- is a keyword in c++. That tells to evaluate the value in compile time.
+**Constexpr- is a keyword in c++. That tells to evaluate the value in compile time.**
 
-See this from cppinsights.io  comparing with and without “constexpr”
+See this from **cppinsights.io**  comparing with and without “constexpr”
 
 ![image-100.png](images/image-100.png)
 
@@ -902,9 +932,9 @@ See this from cppinsights.io  comparing with and without “constexpr”
  
 ---
 
-Build own Concept/Custom concept: 
+**Build own Concept/Custom concept:**
 
-Example 1:
+**Example 1:**
 
 ![image-102.png](images/image-102.png)
 
@@ -932,7 +962,7 @@ Diff way to use concepts:
 
 ![image-106.png](images/image-106.png)
 
-Example 2:
+**Example 2:**
 
 ![image-107.png](images/image-107.png)
 
@@ -940,7 +970,7 @@ Example 2:
 
 Line-10,11: requires 2 parameter which are multipliable. This will not give multiply of “a” ans “b” If pass (char)  concepts will not satisfy. Error
 
-Example 3: If we want “a” will be int and “b” will be double. See below. Use diff type name.
+**Example 3: If we want “a” will be int and “b” will be double. See below. Use diff type name.**
 
 ![image-108.png](images/image-108.png)
 
@@ -996,7 +1026,9 @@ Example **:
 
 ![image-115.png](images/image-115.png)
 
-Exit(): “exit(1)” terminate the whole program. So if this is also used in used in a function, it stop the entire program.
+---
+
+**Exit(): **“exit(1)” terminate the whole program. So if this is also used in used in a function, it stop the entire program.
 
 ![image-116.png](images/image-116.png)
 
@@ -1014,13 +1046,15 @@ exit(1) → “Program ended due to an error.” // abnormal termination of the 
 
 ---
 
-*** If we pass an array to a function it pass its reference through pointer. Not a copy.
+> If we pass an array to a function it pass its reference through pointer. Not a copy.
 
-OOP
+---
 
-Class: Class is a mechanism to build our own type to use them like we have been using built in type(int, double). Its like a blueprint to create object.
+**OOP**
 
-Object: An object is a real instance(copy) of that class. Like a actual car built from blueprint.
+**Class:** Class is a mechanism to build our own type to use them like we have been using built in type(int, double). Its like a blueprint to create object.
+
+**Object: An object is a real instance(copy) of that class. Like a actual car built from blueprint.**
 
 ![image-119.png](images/image-119.png)
 
@@ -1043,7 +1077,7 @@ Object: An object is a real instance(copy) of that class. Like a actual car buil
 ![image-120.png](images/image-120.png)
 
   
-1. Constructor:
+**1. Constructor:**
 
 ![image-121.png](images/image-121.png)
 
@@ -1077,7 +1111,9 @@ Or inside main
 
  
 
-2. Setter & Getter:
+---
+
+**2. Setter & Getter:**
 
 Private members are not accessible from outside. Both are methods to modify or read member variable of a class.
 
@@ -1091,24 +1127,24 @@ Means this constant is define on any other file of the project and we are not su
 
 ---
 
-“::” Scope Resolution Operator: Used when a function of a class us defined on other file.
+**“::” Scope Resolution Operator: Used when a function of a class us defined on other file.**
 
 ![image-125.png](images/image-125.png)
 
  
 Here “Cylinder” constructor is belong to Cylinder class. We can use any function instead constructor.
 
-But we have to mention function prototype inside the class. Like: Cylinder(double red_…..);
+But we have to mention function prototype inside the class. Like: **Cylinder(double red_…..);**
 
 ---
 
-Manage class object by Pointer:
+**Manage class object by Pointer:**
 
 ![image-126.png](images/image-126.png)
 
-Here “ - >” is a dereferencing operator. Works like (*c2).findcir();
+Here “ - >” is a dereferencing operator. Works like **(*c2).findcir();**
 
-c2 pointer will be on stack memory but obj will be on heap.
+**c2 pointer will be on stack memory but obj will be on heap.**
 
 Direct creating object creates on stack and with using pointer object will create on heap. Remember to release memory.
 
@@ -1116,9 +1152,11 @@ Direct creating object creates on stack and with using pointer object will creat
 
  
 
-dangling pointer is dangerous. Holds old memory. So after deleting set c2=nullptr;
+dangling pointer is dangerous. Holds old memory. So after deleting set **c2=nullptr;**
 
-3. Destructors:
+---
+
+**3. Destructors:**
 
 ![image-128.png](images/image-128.png)
 
@@ -1128,17 +1166,17 @@ Destructors are called by the compiler to destroy our objects.
 ![image-129.png](images/image-129.png)
 
  
-When Destructor Called?
+**When Destructor Called?**
 
-  * When local stack objects goes out of scape then destructor is going to be called by compiler.
+> When local stack objects goes out of scape then destructor is going to be called by compiler.
 
-  * When heap object is released with delete.
+> When heap object is released with delete.
 
-*** Destructor has no parameter.
+> Destructor has no parameter.
 
-*** Destructor does not called by compiler automatically for heap data. We have to release memory like line 32(below)
+> Destructor does not called by compiler automatically for heap data. We have to release memory like line 32(below)
 
-*** The compiler calls destructor for objects with automatic storage duration when they leave scope.
+> The compiler calls destructor for objects with automatic storage duration when they leave scope.
 
 If I have 3 objects(d1,d2,d3), destructor will call 3 times. But in reverse order. ‘d3’ destructor will call 1st and d1 destructor in last.
 
@@ -1154,7 +1192,7 @@ Explained Below:
 
 ![image-131.png](images/image-131.png)
 
-In line 23 string_view
+In line 23 **string_view**
 
 ![image-132.png](images/image-132.png)
 
@@ -1174,7 +1212,9 @@ Diff Bet string_view & string:
 
 Pass an object by value: see 22:00:00 hr
 
-4. “this” Pointer:  ‘this’ is a special kind of pointer, maintain by c++ to manipulate the current object. This ‘this’ pointer contains the address of the current object.
+---
+
+**4. “this” Pointer:  ‘this’ is a special kind of pointer, maintain by c++ to manipulate the current object. This ‘this’ pointer contains the address of the current object.**
 
 ![image-137.png](images/image-137.png)
 
@@ -1188,13 +1228,13 @@ Pass an object by value: see 22:00:00 hr
   
 Not exactly pointing to the current object member(above).
 
-Chained call using Pointer:
+**Chained call using Pointer:**
 
 ![image-139.png](images/image-139.png)
 
  
 
-Chained call using Reference:
+**Chained call using Reference:**
 
 ![image-140.png](images/image-140.png)
 
@@ -1208,7 +1248,9 @@ What happen in line: 33
 
  
 
-5. Struct Vs Classes: Struct is another way to  define classes. Differences:
+---
+
+**5. Struct Vs Classes: Struct is another way to  define classes. Differences:**
 
   
 
@@ -1218,7 +1260,9 @@ What happen in line: 33
 
 So We can use struct when we have public members. But both are almost same. We can use anyone.
 
-6. Size of the class objects: Size of the class objects depends on the member of the class, not functions.
+---
+
+**6. Size of the class objects: Size of the class objects depends on the member of the class, not functions.**
 
 ![image-144.png](images/image-144.png)
 
@@ -1250,14 +1294,14 @@ Here object size should be 44 byte. But Actual size is 48. cause, Alignment rule
 
   
 
-The total object size must be a multiple of the largest alignment (here: 8 bytes)
+**The total object size must be a multiple of the ******largest alignment****** (here: 8 bytes)**
 
 so there will 4 byte padding after 4 byte integer memory. See memory layout: below
 
 ![image-150.png](images/image-150.png)
 
   
-Here Offset is the byte position of a member inside an object, measured from the object start.
+Here **Offset** is the byte position of a member inside an object, measured from the object start.
 
 For functions:
 
@@ -1265,9 +1309,9 @@ For functions:
 
  
 
-Inheritance
+**Inheritance**
 
-1. Inheritance: Inheritance in C++ is a mechanism that allows a new class (derived class) to inherit properties and behaviours (methods) from an existing class (base class), promoting code reuse and creating a hierarchical relationship between classes.
+**1. Inheritance: Inheritance in C++ is a mechanism that allows a new class (derived class) to inherit properties and behaviours (methods) from an existing class (base class), promoting code reuse and creating a hierarchical relationship between classes.**
 
 When a class inherits another class, it gets all the accessible members of the parent class, and the child class can also redefine (override) or add new functionality to them.
 
@@ -1352,7 +1396,7 @@ Though “pMotherName” member is protected. We can use in myFamily class, expl
 
 ---
 
-2. Default Arc Constructor with inheritance:
+**2. Default Arc Constructor with inheritance:**
 
 Always provide default constructor for classes. Because compiler may calls these default constructor, specially if the class of inheritance.
 
@@ -1365,9 +1409,9 @@ Compiler will go for base class first then the other layer which was inherited t
 
 ---
 
-3. Initializer List:
+**3. ****Initializer List:**
 
-Give a variable/object its first valid value at the moment it is created.
+Give a variable/object its **first valid value at the moment it is created**.
 
 ![image-166.png](images/image-166.png)
 
@@ -1385,7 +1429,7 @@ Give a variable/object its first valid value at the moment it is created.
 
    
 
-Explain: Initializer List vs Assignment
+**Explain:** Initializer List vs Assignment
 
 ![image-171.png](images/image-171.png)
 
@@ -1396,26 +1440,26 @@ Explain: Initializer List vs Assignment
  
 ---
 
-4. Custom constructor with Inheritance:
+**4. ****Custom constructor with Inheritance:**
 
 Some time we need to call custom constructor to be called instead of default with many parameter.
 
 ![image-173.png](images/image-173.png)
 
   
-The car class constructor uses an initializer list to initialize both the base class and its own members.
+The car class constructor uses an **initializer list** to initialize both the base class and its own members.
 
-Initializer List: :vehicle(vname, weight, brName), doorNumber(drnumber)
+**Initializer List:** :vehicle(vname, weight, brName), doorNumber(drnumber)
 
-- :vehicle(...) - Calls the base class vehicle constructor, passing the name, weight, and brand name to initialize inherited members
+- ** :vehicle(...)** - Calls the base class vehicle constructor, passing the name, weight, and brand name to initialize inherited members
 
-- doorNumber(drnumber) - Initializes the doorNumber member variable with the provided value
+- ** doorNumber(drnumber)** - Initializes the doorNumber member variable with the provided value
 
 ![image-174.png](images/image-174.png)
 
 ---
 
-5. Copy Constructors with Inheritance: A copy constructor in C++ is a member function that initializes a new object using an existing object of the same class. It is the standard mechanism for duplicating object data and takes a reference to the source object as its parameter.
+**5. ****Copy Constructors with Inheritance: **A **copy constructor** in C++ is a member function that **initializes a new object using an existing object of the same class**. It is the standard mechanism for duplicating object data and takes a reference to the source object as its parameter.
 
  
 
@@ -1430,9 +1474,7 @@ Here, in Line 20: copy constructor of human class is receiving an object referen
 
 ~~~
 
-```cpp
 	human(source);//line 34
-```
 
 ~~~
 
@@ -1446,7 +1488,7 @@ this means: copy the human portion from the source using human copy constructor(
 
 This Means: Take a human object by reference.
 
-Flow chart for above code:
+**Flow chart for above code:**
 
 → player “manus” object is created.
 
@@ -1478,11 +1520,11 @@ When do we need:
 
 ## Core rule (very important)
 
-“Copy constructor is NOT for normal use — it is for creating a new independent object with same state when the program explicitly needs duplication.”
+“Copy constructor is NOT for normal use — it is for **creating a new independent object with same state when the program explicitly needs duplication.”**
 
 ---
 
-6. Inheriting Base Constructor:          // introduced in C++11
+**6. Inheriting Base Constructor:          // introduced in C++11**
 
 Base constructors are not inherited by default. Means it is not possible to use  base constructor by derived class. But it is possible to tell compiler to use the base constructor to set up our own objects. How? See below:
 
@@ -1495,11 +1537,11 @@ line 26 says: when building player object,, don’t use your own constructors in
 ![image-182.png](images/image-182.png)
 
  
-using human::human; makes all accessible constructors of the base class (human) available in the derived class (player). The compiler generates forwarding constructors that call the corresponding base-class constructors.
+**using human::human;** makes all accessible constructors of the base class (human) available in the derived class (player). The compiler generates forwarding constructors that call the corresponding base-class constructors.
 
 ***A derived class can still define its own constructors even when using using Base::Base;. Both inherited constructors and user-defined constructors may coexist.
 
-***  Only accessible constructors are inherited. Private constructors of the base class cannot be inherited.
+> Only accessible constructors are inherited. Private constructors of the base class cannot be inherited.
 
 Constructor name will be derived class name. This is going to forwarding the work to initialize our object throw the player class. This is called Inheriting base constructor.
 
@@ -1507,19 +1549,19 @@ Generally it is not recommended to use unless we don’t have other option.
 
 Q: if i have default constructor and parameterized constructor, which one will inherit if use "using human::human;"
 
-Ans: using Human::Human; inherits all accessible constructors from the base class, not just one.
+Ans: **using Human::Human;** inherits **all accessible constructors** from the base class, not just one.
 
 ![image-183.png](images/image-183.png)
 
  
 
-using Base::Base; inherits every accessible constructor from the base class (default, parameterized, copy, move, etc., if applicable). If the derived class declares a constructor with the same signature, the derived-class constructor takes precedence for that signature.
+**using Base::Base;** inherits **every accessible constructor** from the base class (default, parameterized, copy, move, etc., if applicable). If the derived class declares a constructor with the same signature, the derived-class constructor takes precedence for that signature.
 
 ---
 
-7. Inheritance with Destructor:  As we know, When creating a derived-class object, constructors are called from base to derived. But Destructor are called in reverse order. From above example, player class destructor(derived class) will call 1st, then human(base) class destructor will class. If we have 3 layer of inheritance as videos, CivilEnginne destructor called 1st, then Engineer, then Person class destructor.
+**7. Inheritance with Destructor:  **As we know, When creating a derived-class object, constructors are called **from base to derived**. **But** Destructor are called in reverse order. From above example, player class destructor(derived class) will call 1st, then human(base) class destructor will class. If we have 3 layer of inheritance as videos, CivilEnginne destructor called 1st, then Engineer, then Person class destructor.
 
-In C++, destructors in inheritance are mainly about order of destruction.
+In C++, destructors in inheritance are mainly about **order of destruction.**
 
 ![image-184.png](images/image-184.png)
 
@@ -1528,7 +1570,7 @@ See above: Destructor’s are called in reverse order.
 
 ---
 
-8. Reused symbols in Inheritance: We can use same names of parameter/methods in inheritance hierarchy. Means Base class and derived class can have same name of parameter/methods.
+**8. Reused symbols in Inheritance: We can use same names of parameter/methods in inheritance hierarchy. Means Base class and derived class can have same name of parameter/methods.**
 
 If we have same method on child and parent class and call the method, what C++ does is, it is going to override/hide the parent class method/parameter and use the child class method/parameter
 
@@ -1537,7 +1579,7 @@ If we have same method on child and parent class and call the method, what C++ d
      
 ­--------------------------------
 
-Polymorphism
+**Polymorphism**
 
 Polymorphism is an OOP concepts that allows a same function or operator to behave differently in different scenarios depending on the objects that uses it. Polymorphism means "many forms".
 
@@ -1547,7 +1589,7 @@ For Example;
 
 The “+”   operator in C++ is used to perform two specific functions. When it is used with numbers, it performs addition. And when we use the + operator with strings, it performs string concatenation.
 
-Key Idea is: one interface- many implementation..
+**Key Idea is:** one interface- many implementation..
 
 Types:
 
@@ -1558,9 +1600,9 @@ Types:
 ![image-186.png](images/image-186.png)
 
  
-Compile Time(Static) Polymorphism: Compile-time polymorphism is also known as static polymorphism or early binding. In this type of polymorphism, the compiler decides which function or operator to call during compilation.
+**Compile Time(Static) Polymorphism: Compile-time polymorphism is also known as static polymorphism or early binding. In this type of polymorphism, the compiler decides which function or operator to call during compilation.**
 
-1. Function Overloading: In C++, we can use two functions having the same name if they have different parameters (either types or number of arguments).  And, depending upon the number/type of arguments, different functions are called. For example,  See the link(Click): Example
+**1. Function Overloading: In C++, we can use two functions having the same name if they have different parameters (either types or number of arguments).  And, depending upon the number/type of arguments, different functions are called. For example,  See the link(Click): Example**
 
 In case of OOP example:
 
@@ -1573,17 +1615,17 @@ When add(10, 2) is called, the integer version is executed; when add(5.3, 6.2) i
 
 ---
 
-2. Operator Overloading: In C++, we can define how operators behave for user-defined types like class and structures. For example,
+**2. Operator Overloading: **In C++, we can define how operators behave for user-defined types like class and structures. For example,
 
 The + operator, when used with values of type int, returns their sum. However, when used with objects of a user-defined type, it is an error.
 
 In this case, we can define the behaviour of the + operator to work with objects as well.
 
-This concept of defining operators to work with objects and structure variables is known as operator overloading.
+This concept of defining operators to work with objects and structure variables is known as **operator overloading**.
 
-Note: Most operators in C++ can be overloaded, but operators such as “::”,  “ . ”,  “.*”,   “?:” and sizeof cannot be overloaded because they are essential to the core functionality of the language.
+****Note: ****Most operators in C++ can be overloaded, but operators such as “::”,  “ . ”,  “.*”,   “?:” and sizeof cannot be overloaded because they are essential to the core functionality of the language.
 
-Syntax:
+**Syntax:**
 
 ![image-188.png](images/image-188.png)
 
@@ -1598,7 +1640,7 @@ Version I:
    
 (Above code)Normally, + only works on built-in types like int or float. When you write 1 + 2, the compiler knows how to add raw numbers. But c1 + c2 where c1 and c2 are Complex objects means nothing to the compiler by default — it doesn't know what "adding" two objects should mean.
 
-Operator overloading lets you teach the compiler what + should do when it sees two Complex objects on either side of it. Under the hood, c1 + c2 literally gets translated by the compiler into a function call. Overloading just means: "when you see this operator with these operand types, call this function instead of giving an error."
+Operator overloading lets you **teach the compiler what ****+**** should do** when it sees two Complex objects on either side of it. Under the hood, c1 + c2 literally gets translated by the compiler into a function call. Overloading just means: "when you see this operator with these operand types, call this function instead of giving an error."
 
 The compiler rewrites line 20(Complex c3 = c1 + c2;) internally as:
 
@@ -1608,9 +1650,9 @@ The compiler rewrites line 20(Complex c3 = c1 + c2;) internally as:
 
 So:
 
-- c1 is the object the method is called on — that's why inside the function, real and imag (no prefix) refer to c1's members.
+- c1 is the object the method is called **on** — that's why inside the function, real and imag (no prefix) refer to c1's members.
 
-- c2 is the argument passed in — that's obj inside the function.
+- c2 is the **argument** passed in — that's obj inside the function.
 
 - The function returns a brand-new Complex built from the sums, and that becomes c3.
 
@@ -1621,7 +1663,7 @@ Version II:
 ![image-191.png](images/image-191.png)
 
  
-Here, operator+ is not a member of the class — it's declared friend, meaning it's a regular standalone function that's just been granted permission to access the class's private members (real, img).
+Here, operator+ is **not** a member of the class — it's declared friend, meaning it's a regular standalone function that's just been granted permission to access the class's private members (real, img).
 
 The compiler rewrites line 20(Complex c3 = c1 + c2;) internally as:
 
@@ -1631,27 +1673,29 @@ The compiler rewrites line 20(Complex c3 = c1 + c2;) internally as:
 
  
 
-Notice the difference: now both operands are explicit parameters, obj1 and obj2. There's no implicit “this”, because this function isn't attached to any particular object — it's a free function that happens to live inside the class definition (for organizational convenience) and gets friend access to read private data.
+Notice the difference: now **both** operands are explicit parameters, **obj1** and **obj2**. There's no implicit **“****this”****,** because this function isn't attached to any particular object — it's a free function that happens to live inside the class definition (for organizational convenience) and gets **friend** access to read private data.
 
-Q: Tell me what is Friend function?
+Q: Tell me what is **Friend function**?
 
-Ans: A friend function is a function that is not a member of a class, but is still given special permission to access the class's private and protected members, as if it were a member.
+Ans: A **friend function** is a function that is **not a member** of a class, but is still given **special permission to access the class's private and protected members**, as if it were a member.
 
 Sometimes we may need to access private members of a class from outside. Friend function gives us that scope.
 
-write the function signature inside the class, with the “friend” keyword in front. That's just a declaration — it tells the compiler "this function, even though it's defined elsewhere (or right here), gets access to my private stuff."
+write the function signature inside the class, with the “**friend”** keyword in front. That's just a declaration — it tells the compiler "this function, even though it's defined elsewhere (or right here), gets access to my private stuff."
 
 ![image-193.png](images/image-193.png)
 
  
 ---
 
-Runtime(Dynamic) Polymorphism: Runtime polymorphism is also known as dynamic polymorphism or late binding. In this type, the function call is resolved during program execution instead of compilation.
+**Runtime(Dynamic) Polymorphism: Runtime polymorphism is also known as dynamic polymorphism or late binding. In this type, the function call is resolved during program execution instead of compilation.**
  
 
 ![image-194.png](images/image-194.png)
 
-3. Function Overriding: Function Overriding occurs when a derived class defines one or more member functions of the base class. That base function is said to be overridden. The base class function must be declared as virtual function for runtime polymorphism to happen.
+---
+
+**3. Function Overriding: **Function Overriding occurs when a derived class defines one or more member functions of the base class. That base function is said to be overridden. The base class function must be declared as **virtual function** for runtime polymorphism to happen.
 
 Suppose we define the same function in both the base class and the derived class. Now, when we call this function using the object of the derived class, the function of the derived class executes.
 
@@ -1682,42 +1726,42 @@ Using Pointer:
 
 (without virtual function)
 
-** N.B: This is not example of polymorphism. Example of Static binding
+> N.B: This is not example of polymorphism. Example of Static binding
 
 ![image-198.png](images/image-198.png)
 
 Img-1
 
-Here(above), Base type pointer points to the Derived object “derived1”. When we call the print() function using ptr, it calls the member function from Base. Without virtual, C++ uses static binding (also called compile-time binding). The compiler looks at the type of the pointer (Base*) and decides at compile time: "this pointer is Base*, so call Base::print()." It doesn't matter what object the pointer actually points to at runtime — the pointer's declared type wins.
+Here(above), Base type pointer points to the Derived object “derived1”. When we call the print() function using ptr, it calls the member function from Base. Without virtual, C++ uses **static binding** (also called compile-time binding). The compiler looks at the **type of the pointer** (Base*) and decides at compile time: "this pointer is Base*, so call Base::print()." It doesn't matter what object the pointer actually points to at runtime — the pointer's declared type wins.
 
-In order to override the Base function instead of accessing it, we need to use virtual functions in the Base class(see below example).
+In order to override the Base function instead of accessing it, we need to use **virtual functions** in the Base class(see below example).
 
 (with virtual function)
 
-** N.B: This is the example of polymorphism(runtime)
+> N.B: This is the example of polymorphism(runtime)
 
 ![image-199.png](images/image-199.png)
 
 Img-2
 
-With virtual, C++ uses dynamic binding (runtime binding). The compiler inserts a lookup through a vtable (virtual table) — a hidden table of function pointers attached to the object — so the decision of which function to call is deferred to runtime, based on the actual type of the object, not the pointer type.
+With virtual, C++ uses **dynamic binding** (runtime binding). The compiler inserts a lookup through a **vtable** (virtual table) — a hidden table of function pointers attached to the object — so the decision of which function to call is deferred to runtime, based on the **actual type of the object**, not the pointer type.
 
-override doesn't change runtime behaviour at all — it's a compile-time safety check. It tells the compiler "I intend for this function to override a virtual function from the base class." If you make a typo in the signature (wrong parameters, wrong const-ness, etc.), the compiler will throw an error instead of silently creating a new, unrelated function.
+override doesn't change runtime behaviour at all — it's a **compile-time safety check**. It tells the compiler "I intend for this function to override a virtual function from the base class." If you make a typo in the signature (wrong parameters, wrong const-ness, etc.), the compiler will throw an error instead of silently creating a new, unrelated function.
 
 ![image-200.png](images/image-200.png)
 
  
 
-Without virtual, C++ chooses the function based on the type of the pointer/reference (compile time).
+Without virtual, C++ chooses the function based on the **type of the pointer/reference** (compile time).
 
-With virtual, C++ chooses the function based on the actual type of the object (runtime).
+With virtual, C++ chooses the function based on the **actual type of the object** (runtime).
 
-So, virtual enables runtime polymorphism, while override is a safety feature that helps ensure your derived function really overrides the intended virtual function.
+So, **virtual**** enables runtime polymorphism**, while **override**** is a safety feature** that helps ensure your derived function really overrides the intended virtual function.
 
 ![image-201.png](images/image-201.png)
 
  
-Virtual Functions and Function Overriding: A virtual function is a member function in the base class that we expect to redefine in derived classes. The print() method in the Derived class shadows the print()  method in the Base class. However, if we create a pointer of Base type to point to an object of Derived class and call the print() function, it calls the print() function of the Base class.
+**Virtual Functions and Function Overriding: **A virtual function is a member function in the base class that we expect to redefine in derived classes. The print() method in the Derived class shadows the print()  method in the Base class. However, if we create a pointer of Base type to point to an object of Derived class and call the print() function, it calls the print() function of the Base class.
 
 To avoid this, we declare the print() function of the Base class as virtual by using the virtual keyword.
 
@@ -1725,7 +1769,7 @@ If the virtual function is redefined in the derived class, the function in the d
 
 ---
 
-Size of Polymorphic object: Below  image with polymorphism(dynamic binding)
+**Size of Polymorphic object: Below  image with polymorphism(dynamic binding)**
 
 ![image-202.png](images/image-202.png)
 
@@ -1738,7 +1782,7 @@ Below image without polymorphism(only removed “virtual” keyword)
 
 Above 2 image we can see, Size are different.
 
-A polymorphic object is usually larger than a non-polymorphic object. The reason is that the compiler adds a hidden pointer called the vptr (virtual pointer). A class becomes polymorphic if it has at least one virtual function.
+**A**** polymorphic object is usually larger than a non-polymorphic object**. The reason is that the compiler adds a **hidden pointer** called the ****vptr****** (virtual pointer)**. A class becomes polymorphic if it has **at least one virtual function**.
 
 Each object of a polymorphic class contains a hidden pointer:
 
@@ -1746,9 +1790,9 @@ Each object of a polymorphic class contains a hidden pointer:
 
  
 
-The vptr points to a virtual table (vtable), which stores the addresses of the class's virtual functions. Without the vptr, the program would have no way to determine which virtual function should be called at runtime.
+The vptr points to a **virtual table (vtable)**, which stores the addresses of the class's virtual functions. Without the vptr, the program would have no way to determine which virtual function should be called at runtime.
 
-In short, compiler need to track the information that allows to dynamically resolve virtual function calls.
+**In short, compiler need to track the information that allows to dynamically resolve virtual function calls.**
 
 ![image-205.png](images/image-205.png)
 
@@ -1756,13 +1800,13 @@ In short, compiler need to track the information that allows to dynamically reso
 
 ### Is there one vptr or one vtable?
 
-- Each object has its own vptr.
+- **Each object has its own ****vptr****.**
 
-- Each class has one vtable (in the common case).
+- **Each class has one ****vtable** (in the common case).
 
 ---
 
-Slicing:
+**Slicing:**
 
 ![image-206.png](images/image-206.png)
 
@@ -1789,7 +1833,7 @@ In the above example derived object takes 2 parameters(a and b). But due to slic
 
 ---
 
-Polymorphic Object Stored in collections:
+**Polymorphic Object Stored in collections:**
 
 ![image-210.png](images/image-210.png)
 
@@ -1800,7 +1844,7 @@ Here(above) Storing the derived object in Shape class type array. So extra part 
 ![image-211.png](images/image-211.png)
 
  
-“shapes2[]” is shape type array of reference. C++ does not allow arrays of references. Because reference is just another name of a variable. And array is designed to modify data which is stored. But reference can’t be modified or changes.
+“shapes2[]” is shape type array of reference. C++ **does not allow arrays of references**. Because reference is just another name of a variable. And array is designed to modify data which is stored. But reference can’t be modified or changes.
 
 But Store in pointers works also no slicing off. Means all will be stored. (below)
 
@@ -1817,9 +1861,9 @@ Also works for Smart Pointer as below
 
 ---
 
-Inheritance & Polymorphism with Static Variable: See 1st Static Variable
+**Inheritance & Polymorphism with Static Variable: See 1st Static Variable**
 
-1. Static class Member: A static data member is shared by all objects of the class — there's only one copy, not one per object.
+**Static class Member: **A static data member is shared by **all objects** of the class — there's only one copy, not one per object.
 
 ![image-214.png](images/image-214.png)
 
@@ -1837,9 +1881,9 @@ Here(above) Ellipse is a Shape. So total object is 6. But in below code… We ca
 
 We can see obj count(obj_count) variables are same in both class. Now Ellipse object count variable is going to maintain its own static variable and Shape also.
 
-Shape::obj_count and Ellipse::obj_count are two completely different static variables. They just happen to have the same name. These are two different variables stored at different memory locations.
+**Shape::obj_count**** and ****Ellipse::obj_count**** are two completely different static variables.** They just happen to have the same name. These are two different variables stored at different memory locations.
 
-4. Static Member Function: Can be called without creating an object, and can only access static members (no access to this or non-static members).
+**4. Static Member Function: **Can be called without creating an object, and can only access static members (no access to this or non-static members).
 
 ![image-217.png](images/image-217.png)
 
@@ -1847,21 +1891,23 @@ Shape::obj_count and Ellipse::obj_count are two completely different static vari
 
 ---
 
-“Final” in Inheritance: “Final” Key allow us to Restrict
+**“Final” in Inheritance: “Final” Key allow us to Restrict**
 
 1. Final virtual function/ function (override method in derived class)
 
 2. Final Class(base class)
 
-1. Final virtual function/ function:
+**1. Final virtual function/ function:**
 
 ![image-218.png](images/image-218.png)
 
  
 
+```cpp
 Shape::draw() method is final. Means no downstream class(derived class: Circle) can override this method. This is used to restrict, how we can override our own virtual methods in downstream classes(derived class).
+```
 
-2.  Final Class: A class marked final cannot be inherited.
+**2.  ****Final Class: **A class marked final **cannot be inherited**.
  
 
 ![image-219.png](images/image-219.png)
@@ -1870,7 +1916,7 @@ Above, Director is final. So Director class can’t be inherited.
 
 ---
 
-Virtual functions with  Default Argument:
+**Virtual functions with  Default Argument:**
 
 ![image-220.png](images/image-220.png)
 
@@ -1887,7 +1933,7 @@ It is recommended not to use default arguments.
 
 ---
 
-Virtual Destructor:  Remember previous example. Ellipse class inherit Shape class publicly. So if we create a Ellipse class object and when its times to destroy object, the order of the destructor call  is: 1st Ellipse class destructor called then Shape class destructor called.
+**Virtual Destructor:  Remember previous example. Ellipse class inherit Shape class publicly. So if we create a Ellipse class object and when its times to destroy object, the order of the destructor call  is: 1st Ellipse class destructor called then Shape class destructor called.**
 
 ![image-222.png](images/image-222.png)
 
@@ -1910,7 +1956,7 @@ See Link(virtual destructor) for more… https://www.programiz.com/cpp-programmi
 
 ---
 
-Dynamic Cast: dynamic_cast is a C++ casting operator used to safely convert pointers or references within an inheritance hierarchy at runtime.
+**Dynamic Cast: **dynamic_cast is a C++ casting operator used to **safely convert pointers or references within an inheritance hierarchy at runtime**.
 
 In some cases we need to call/access non-polymorphic methods of the derived class and we have a pointer o base class pointing to the derived class objects. Then the pointer have no idea about non-polymorphic methods.
  
@@ -1933,7 +1979,7 @@ For downcasting to work, the base class must be polymorphic. A class becomes pol
 
 If the base class doesn’t contain any virtual function then, it is not polymorphic.As a result, dynamic_cast cannot perform runtime type checking and compilation fails.
 
-*** Requires the base class to have at least one virtual function to apply Dynamic_cast
+> Requires the base class to have at least one virtual function to apply Dynamic_cast
 
 ![image-227.png](images/image-227.png)
 
@@ -1959,7 +2005,7 @@ Like pointer we can use references. As below:
  
 When Casting fails?
 
-dynamic_cast can fail when the actual object at runtime is not compatible with the type you're trying to cast to.
+dynamic_cast can fail when the **actual object at runtime is not compatible with the type you're trying to cast to**.
 
 ![image-231.png](images/image-231.png)
 
@@ -1998,15 +2044,15 @@ While polymorphism works, see how constructor and destructor called. Below:
  
 ---
 
-Pure Virtual function & Abstract Class:
+**Pure Virtual function & Abstract Class:**
 
-Pure Virtual function: A pure virtual function is a virtual function that the base class declares but does not provide a required implementation. It forces any child class to write its own version of this function.
+**Pure Vir****tual function: **A **pure virtual function** is a virtual function that the base class declares but does not provide a required implementation. It forces any child class to write its own version of this function.
 
 ![image-235.png](images/image-235.png)
 
  
 
-The  “= 0” is what makes it pure virtual.
+The  “= 0” is what makes it **pure virtual**.
 
 It basically says, “Every derived class must provide its own draw().”
 
@@ -2016,13 +2062,13 @@ It basically says, “Every derived class must provide its own draw().”
 
 Here, Circle provides an implementation for draw().
 
-Abstract Class: A class containing at least one pure virtual function is called an abstract class.
+**Abstract Class: **A class containing **at least one pure virtual function** is called an **abstract class**.
 
-cannot create an object of an abstract class. But we can create a pointer/reference:
+**cannot create an object** of an abstract class. But we can create a pointer/reference:
 
 ***Derived class must provide the definition of pure virtual class. If a derived class doesn’t provide it, then this derived class have to be Abstract class. Also can’t create object of that derived class since this is also a abstract class.
 
-We can provide a definition for a pure virtual function outside the class:
+**We ****can provide a definition** for a pure virtual function outside the class:
 
 ![image-237.png](images/image-237.png)
 
@@ -2056,11 +2102,11 @@ Also a shape can be a Rectangle, Circle, Triangle etc. So let the derived-class 
 
 ---
 
-Interface: An interface is a specification of something that will be fully implemented in a derived class but the specification itself resides in the abstract class.
+**Interface: An interface is a specification of something that will be fully implemented in a derived class but the specification itself resides in the abstract class.**
 
 An abstract class with only pure virtual functions and no member variable can be used as interfaces.
 
-***Class can inherit many interfaces. _|_
+***Class can inherit many interfaces. 
 
 
 ---
