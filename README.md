@@ -50,7 +50,7 @@
 
 **“C++: 31 hours long video of freecodecamp”**
 
-***Didn’t add basics Like: if,else; Loop,Function, Switch etc.
+> Didn’t add basics Like: if,else; Loop,Function, Switch etc.
 
 Features: 
 
@@ -87,8 +87,7 @@ input For Space separated word
 ![image-004.png](images/image-004.png)
 
  
-
-***Precision includes digits before decimal point(.). 12547.325-> 12547 included in the precision.
+> Precision includes digits before decimal point(.). 12547.325-> 12547 included in the precision.
 
 For Float: 12345.6789-> 89will be garbage value. Cause precision 7 for Float. May print like: 12345.6725
 
@@ -156,7 +155,7 @@ will print true, false.
 
 ---
 
-> 31/10 means how many times 10 is gonna fit in 31. so ans is 3.
+** 31/10 means how many times 10 is gonna fit in 31. so ans is 3.
 
 * Relation Operator: > ,< , >=, <=
 
@@ -170,7 +169,7 @@ will print true, false.
 
 ![image-012.png](images/image-012.png)
 
-*************setw() :** set width
+********* ****setw() :** set width
 
 ```cpp
 cout<<right; // printf from right. 	Left for left alignment
@@ -275,7 +274,7 @@ As you know, the first item of an enum has the value 0. The second has the value
 
 ![image-022.png](images/image-022.png)
 
-***Note that if you assign a value to one specific item, the next items will update their numbers accordingly:
+> Note that if you assign a value to one specific item, the next items will update their numbers accordingly:
 
 ![image-023.png](images/image-023.png)
 
@@ -621,7 +620,7 @@ Value will changes to 12.
 
 Using “const” is safe in string literal.
 
-***String literal is actually a character array. When we assign it to “const char * ”, it automatically converts into a pointer to 1st element. String has not fixed amount of memory, cause it internally implemented as a class and it stores its data as **const char pointer.**
+> String literal is actually a character array. When we assign it to “const char * ”, it automatically converts into a pointer to 1st element. String has not fixed amount of memory, cause it internally implemented as a class and it stores its data as **const char pointer.**
 
 ```cpp
 		Const char *msg=”Hello I am here.”;
@@ -760,7 +759,7 @@ Here there are multiple function overload. They are doing the work. To minimise 
 
   “ T ” is a place holder for the data type function is going to receive as argument. But all argument data type **have to be same****(there  is a room for not same data type)**. When compiler see, template function called. It going to look at the data type of arguments which are passing to function. Then compiler generate same function with that data type only when the function is called .
 
-> can also pass string by argument.
+** can also pass string by argument.
 
 Function templates are not c++ code. It just a function blueprint.
 
@@ -768,7 +767,7 @@ Function templates are not c++ code. It just a function blueprint.
 
 If data types are not same passing as argument, we can  explicitly set the type with<double>. This basically tells the compiler to generate double/int etc. template instance function for this calling. And implicitly convert other type to determined type. In below example ”a” variable int type and will convert to double.
 
-> We can see this internal conversion of function template on **cppinsights.io.**
+** We can see this internal conversion of function template on **cppinsights.io.**
 
 ![image-080.png](images/image-080.png)
 
@@ -1017,12 +1016,12 @@ Or we can use nested requirement(requires inside requires). See below(No error)
 
  
 
-Example *: Using Logical operator...
+Example : Using Logical operator...
  
 
 ![image-114.png](images/image-114.png)
 
-Example **:
+Example :
 
 ![image-115.png](images/image-115.png)
 
@@ -1326,12 +1325,12 @@ When a class inherits another class, it gets all the accessible members of the p
 
 in the above example, player class inherits all public members of human. But can’t access private. That’s why we only can print ‘age’ variable. Also passing string through player object(”motaher”, “emon”) constructor will be unused. We have to use public setter & getter.
 
-***Protected member: Sometime we may want that members of base class has to be accessible from derived class but still be inaccessible from outside. In that case use those member as protected member. Below:
+> Protected member: Sometime we may want that members of base class has to be accessible from derived class but still be inaccessible from outside. In that case use those member as protected member. Below:
 
 ![image-154.png](images/image-154.png)
 
   
-***Base class access specifier:
+> Base class access specifier:
 
 ![image-155.png](images/image-155.png)
 
@@ -1539,7 +1538,7 @@ line 26 says: when building player object,, don’t use your own constructors in
  
 **using human::human;** makes all accessible constructors of the base class (human) available in the derived class (player). The compiler generates forwarding constructors that call the corresponding base-class constructors.
 
-***A derived class can still define its own constructors even when using using Base::Base;. Both inherited constructors and user-defined constructors may coexist.
+> A derived class can still define its own constructors even when using using Base::Base;. Both inherited constructors and user-defined constructors may coexist.
 
 > Only accessible constructors are inherited. Private constructors of the base class cannot be inherited.
 
@@ -1623,7 +1622,7 @@ In this case, we can define the behaviour of the + operator to work with objec
 
 This concept of defining operators to work with objects and structure variables is known as **operator overloading**.
 
-***************Note: ****Most operators in C++ can be overloaded, but operators such as “::”,  “ . ”,  “.*”,   “?:” and sizeof cannot be overloaded because they are essential to the core functionality of the language.
+******* ********Note: ****Most operators in C++ can be overloaded, but operators such as “::”,  “ . ”,  “.*”,   “?:” and sizeof cannot be overloaded because they are essential to the core functionality of the language.
 
 **Syntax:**
 
@@ -2037,7 +2036,7 @@ While polymorphism works, see how constructor and destructor called. Below:
 
 4. Base Destructor Called
 
-***Never call virtual(Polymorphic) function from constructor and destruction. To know details See: 30:08:23 Hour.(on the video)
+> Never call virtual(Polymorphic) function from constructor and destruction. To know details See: 30:08:23 Hour.(on the video)
 
 ![image-234.png](images/image-234.png)
 
@@ -2066,7 +2065,7 @@ Here, Circle provides an implementation for draw().
 
 **cannot create an object** of an abstract class. But we can create a pointer/reference:
 
-***Derived class must provide the definition of pure virtual class. If a derived class doesn’t provide it, then this derived class have to be Abstract class. Also can’t create object of that derived class since this is also a abstract class.
+> Derived class must provide the definition of pure virtual class. If a derived class doesn’t provide it, then this derived class have to be Abstract class. Also can’t create object of that derived class since this is also a abstract class.
 
 **We ****can provide a definition** for a pure virtual function outside the class:
 
@@ -2074,7 +2073,7 @@ Here, Circle provides an implementation for draw().
 
  
 
-***Pure virtual means the function makes the class abstract; it does not necessarily mean the function can never have a definition.
+> Pure virtual means the function makes the class abstract; it does not necessarily mean the function can never have a definition.
 
 Abstract class can the normal methods. And we call call them. Below: (Line 18)
 
@@ -2106,7 +2105,7 @@ Also a shape can be a Rectangle, Circle, Triangle etc. So let the derived-class 
 
 An abstract class with only pure virtual functions and no member variable can be used as interfaces.
 
-***Class can inherit many interfaces. 
+> Class can inherit many interfaces.
 
 
 ---
